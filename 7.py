@@ -1,11 +1,19 @@
-# Program to remove all spaces from a string
+#7.	Accept 10 numbers from the user and store them in a list. Calculate:
+#•	Sum 
+#•	Average 
+numbers = []
 
-string = input("Enter a string: ")
+for i in range(10):
+    num = int(input("Enter a number: "))
+    numbers.append(num)
 
-result = ""
+sum = 0
+for num in numbers:
+    sum = sum + num
 
-for ch in string:
-    if ch != " ":
-        result += ch
+average = sum / 10
 
-print("String without spaces:", result)
+print("List:", numbers)
+print("Sum:", sum)
+print("Average:", average)
+

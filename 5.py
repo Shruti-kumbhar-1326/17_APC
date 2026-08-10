@@ -1,15 +1,18 @@
-# Program to count uppercase and lowercase letters
+#5.	Create a list of student names. Remove:
+#•	First student 
+#•#	Last student 
+#•	A specific student by name  
+#Display the remaining list.
 
-string = input("Enter a string: ")
-
-uppercase = 0
-lowercase = 0
-
-for ch in string:
-    if ch.isupper():
-        uppercase += 1
-    elif ch.islower():
-        lowercase += 1
-
-print("Uppercase letters:", uppercase)
-print("Lowercase letters:", lowercase)
+students =["shruti","prachi" ,"siddhi","vaishnvi","kalyani"]
+print("original list of student name:",students)
+students.pop(0)
+print("remove first name:",students)
+students.pop()
+print("remove last name:",students)
+name = input("enter a name to remove :")
+if name in students:
+    students.remove(name)
+else :
+    print("student not found:")
+print("remaining student name",students)        

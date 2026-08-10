@@ -1,23 +1,8 @@
-# Program to count vowels, consonants, digits, spaces, and special characters
-
-string = input("Enter a string: ")
-
-vowels = consonants = digits = spaces = special = 0
-
-for ch in string:
-    if ch in "aeiouAEIOU":
-        vowels += 1
-    elif ch.isalpha():
-        consonants += 1
-    elif ch.isdigit():
-        digits += 1
-    elif ch == " ":
-        spaces += 1
-    else:
-        special += 1
-
-print("Vowels:", vowels)
-print("Consonants:", consonants)
-print("Digits:", digits)
-print("Spaces:", spaces)
-print("Special Characters:", special)
+#2.	Create a list of five integers. Display:
+#•	First element 
+#•	Last element 
+#•	Third element
+integer = [1,2,3,4,5]
+print("firts num:",integer[0])
+print("last num:",integer[-1])
+print("third num:",integer[2])

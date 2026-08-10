@@ -1,21 +1,7 @@
-# Program to print duplicate characters in a string
+#15. Find the second largest element in a list.
+numbers = [10, 25, 45, 30, 50, 20]
 
-string = input("Enter a string: ")
+numbers.sort()
 
-print("Duplicate characters are:")
-
-for i in range(len(string)):
-    count = 0
-    for j in range(len(string)):
-        if string[i] == string[j]:
-            count += 1
-
-    if count > 1:
-        printed = False
-        for k in range(i):
-            if string[i] == string[k]:
-                printed = True
-                break
-
-        if not printed:
-            print(string[i])
+print("List:", numbers)
+print("Second largest element:", numbers[-2])

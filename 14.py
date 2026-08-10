@@ -1,7 +1,7 @@
-# Program to convert a sentence into Title Case
+#14.	Create a list containing duplicate values and display only unique elements.
+numbers = [10, 20, 10, 30, 20, 40, 30, 50, 10]
 
-sentence = input("Enter a sentence: ")
+unique = list(set(numbers))
 
-result = sentence.title()
-
-print("Title Case:", result)
+print("Original list:", numbers)
+print("Unique elements:", unique)

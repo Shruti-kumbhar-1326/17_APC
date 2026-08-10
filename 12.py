@@ -1,14 +1,9 @@
-# Program to find the longest word in a sentence
+#12. Display all elements present at even index positions.
 
-sentence = input("Enter a sentence: ")
 
-words = sentence.split()
+numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
-longest = words[0]
+print("Elements at even index positions:")
 
-for word in words:
-    if len(word) > len(longest):
-        longest = word
-
-print("Longest word:", longest)
-print("Length:", len(longest))
+for i in range(0, len(numbers), 2):
+    print(numbers[i])

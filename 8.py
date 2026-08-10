@@ -1,12 +1,21 @@
-# Program to find the frequency of a character
+#8.	Store 15 integers in a list. Count how many numbers are:
+#•	Even 
+#•	Odd
+numbers = []
 
-string = input("Enter a string: ")
-ch = input("Enter the character to find: ")
+for i in range(15):
+    num = int(input("Enter a number: "))
+    numbers.append(num)
 
-count = 0
+even = 0
+odd = 0
 
-for i in string:
-    if i == ch:
-        count += 1
+for num in numbers:
+    if num % 2 == 0:
+        even = even + 1
+    else:
+        odd = odd + 1
 
-print("Frequency of", ch, "is:", count)
+print("List:", numbers)
+print("Even numbers:", even)
+print("Odd numbers:", odd)

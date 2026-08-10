@@ -1,14 +1,16 @@
-# Program to find the shortest word in a sentence
+#13. Accept 10 numbers and sort them in:
+   # •	Ascending order
+    #•	Descending order
+numbers = []
 
-sentence = input("Enter a sentence: ")
+for i in range(10):
+    num = int(input("Enter a number: "))
+    numbers.append(num)
 
-words = sentence.split()
+# Ascending order
+numbers.sort()
+print("Ascending order:", numbers)
 
-shortest = words[0]
-
-for word in words:
-    if len(word) < len(shortest):
-        shortest = word
-
-print("Shortest word:", shortest)
-print("Length:", len(shortest))
+# Descending order
+numbers.sort(reverse=True)
+print("Descending order:", numbers)

@@ -1,15 +1,20 @@
-# Program to replace all occurrences of a character
+#6.	Write a program to find the largest and smallest number in a list without using max() or min().
+# Find largest and smallest number in a list
 
-string = input("Enter a string: ")
-old = input("Enter the character to replace: ")
-new = input("Enter the new character: ")
+numbers = [10, 25, 5, 40, 15]
 
-result = ""
+largest = numbers[0]
+smallest = numbers[0]
 
-for ch in string:
-    if ch == old:
-        result += new
-    else:
-        result += ch
+for num in numbers:
+    if num > largest:
+        largest = num
 
-print("Updated string:", result)
+    if num < smallest:
+        smallest = num
+
+print("List:", numbers)
+print("Largest number:", largest)
+print("Smallest number:", smallest)
+
+

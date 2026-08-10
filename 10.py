@@ -1,6 +1,10 @@
-# Program to display ASCII value of each character in a string
+#1. Write a program to reverse a list without using the `reverse()` method.
+numbers = [10, 20, 30, 40, 50]
 
-string = input("Enter a string: ")
+reverse = []
 
-for ch in string:
-    print(ch, "=", ord(ch))
+for i in range(len(numbers) - 1, -1, -1):
+    reverse.append(numbers[i])
+
+print("Original list:", numbers)
+print("Reversed list:", reverse)

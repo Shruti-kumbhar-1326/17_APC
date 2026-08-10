@@ -1,6 +1,9 @@
-# Program to print the first and last character of a string
+#9.	Create a list of cities. Ask the user to enter a city name and check whether it exists in the list.
+city = ["kagal", "kolhapur", "sulkud", "tasgaon", "pune"]
 
-string = input("Enter a string: ")
+name = input("Enter a city name to check: ")
 
-print("First character:", string[0])
-print("Last character:", string[-1])
+if name in city:
+    print("City exists in the list.")
+else:
+    print("City does not exist in the list.")   

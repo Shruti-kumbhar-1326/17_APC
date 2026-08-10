@@ -1,13 +1,23 @@
-# Program to check whether a string is palindrome
+#4.	Create a list of numbers. Add:
+#•	One element at the end 
+#•	One element at the beginning 
+#•	One element at a specified position 
+# Create a list of numbers
+numbers = [10, 20, 30, 40, 50]
 
-string = input("Enter a string: ")
+print("Original number list:", numbers)
 
-reverse = ""
+# Add one element at the end
+numbers.append(60)
+print("Add at end:", numbers)
 
-for ch in string:
-    reverse = ch + reverse
+# Add one element at the beginning
+numbers.insert(0, 5)
+print("Add at beginning:", numbers)
 
-if string == reverse:
-    print("The string is a Palindrome.")
-else:
-    print("The string is not a Palindrome.")
+# Add one element at a specified position
+position = int(input("Enter the position: "))
+element = int(input("Enter the element: "))
+
+numbers.insert(position, element)
+print("After adding at specified position:", numbers)
