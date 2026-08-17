@@ -1,11 +1,19 @@
-# 12. Accept five numbers from user
+# 12. Find student with lowest marks
 
-numbers = []
+students = {
+    "Amit": 75,
+    "Sneha": 92,
+    "Rahul": 60,
+    "Priya": 88
+}
 
-for i in range(5):
-    num = int(input("Enter number: "))
-    numbers.append(num)
+lowest_student = ""
+lowest_marks = None
 
-numbers = tuple(numbers)
+for name, marks in students.items():
+    if lowest_marks is None or marks < lowest_marks:
+        lowest_marks = marks
+        lowest_student = name
 
-print("Tuple:", numbers)
+print("Lowest marks:", lowest_marks)
+print("Student:", lowest_student)

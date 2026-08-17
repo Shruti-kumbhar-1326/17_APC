@@ -1,7 +1,16 @@
-# 6. Count how many times a number appears
+# 6. Check employee ID
 
-numbers = (10, 20, 10, 30, 10, 40, 20, 10)
+employees = {
+    101: "Amit",
+    102: "Sneha",
+    103: "Rahul",
+    104: "Priya"
+}
 
-num = int(input("Enter a number: "))
+emp_id = int(input("Enter employee ID: "))
 
-print("Number of times it appears:", numbers.count(num))
+if emp_id in employees:
+    print("Employee exists")
+    print("Name:", employees[emp_id])
+else:
+    print("Employee does not exist")

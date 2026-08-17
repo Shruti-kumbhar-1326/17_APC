@@ -1,7 +1,11 @@
-# 9. Repeat tuple four times
+# 9. Programming languages and creators
 
-numbers = (1, 2, 3)
+languages = {
+    "Python": "Guido van Rossum",
+    "C": "Dennis Ritchie",
+    "Java": "James Gosling",
+    "C++": "Bjarne Stroustrup"
+}
 
-result = numbers * 4
-
-print("Repeated tuple:", result)
+for language, creator in languages.items():
+    print(language, ":", creator)

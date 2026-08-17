@@ -1,11 +1,17 @@
-# 13. Modify a tuple
+# 13. Calculate average marks
 
-numbers = (10, 20, 30, 40)
+students = {
+    "Amit": 75,
+    "Sneha": 92,
+    "Rahul": 80,
+    "Priya": 88
+}
 
-my_list = list(numbers)
+total = 0
 
-my_list[1] = 200
+for marks in students.values():
+    total = total + marks
 
-numbers = tuple(my_list)
+average = total / len(students)
 
-print("Modified tuple:", numbers)
+print("Average marks:", average)

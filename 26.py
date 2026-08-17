@@ -1,12 +1,23 @@
-# 26. Find common elements between two tuples
+# 26. Employee salary operations
 
-tuple1 = (1, 2, 3, 4, 5)
-tuple2 = (4, 5, 6, 7, 8)
+employees = {
+    "Amit": 45000,
+    "Sneha": 60000,
+    "Rahul": 55000,
+    "Priya": 40000
+}
 
-common = ()
+highest = max(employees.values())
+lowest = min(employees.values())
 
-for num in tuple1:
-    if num in tuple2:
-        common = common + (num,)
+average = sum(employees.values()) / len(employees)
 
-print("Common elements:", common)
+print("Highest salary:", highest)
+print("Lowest salary:", lowest)
+print("Average salary:", average)
+
+print("Employees earning more than 50000:")
+
+for name, salary in employees.items():
+    if salary > 50000:
+        print(name, ":", salary)

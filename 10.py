@@ -1,9 +1,12 @@
-# 10. Perform different slicing operations
+# 10. Accept five student names and marks
 
-numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+students = {}
 
-print("First five elements:", numbers[:5])
-print("Last five elements:", numbers[5:])
-print("Middle four elements:", numbers[3:7])
-print("Alternate elements:", numbers[::2])
-print("Reverse tuple:", numbers[::-1])
+for i in range(5):
+    name = input("Enter student name: ")
+    marks = int(input("Enter marks: "))
+
+    students[name] = marks
+
+print("Student dictionary:")
+print(students)

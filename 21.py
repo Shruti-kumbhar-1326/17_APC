@@ -1,8 +1,8 @@
-# 21. Student details
+# 21. Numbers and their squares
 
-student = (101, "Shruti", "Computer Science", 85)
+squares = {}
 
-print("Roll Number:", student[0])
-print("Name:", student[1])
-print("Department:", student[2])
-print("Marks:", student[3])
+for i in range(1, 11):
+    squares[i] = i * i
+
+print(squares)

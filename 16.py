@@ -1,10 +1,17 @@
-# 16. Calculate sum of tuple elements
+# 17. Find common keys
 
-numbers = (10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
+dict1 = {
+    "A": 10,
+    "B": 20,
+    "C": 30
+}
 
-total = 0
+dict2 = {
+    "B": 40,
+    "C": 50,
+    "D": 60
+}
 
-for num in numbers:
-    total = total + num
+common = set(dict1.keys()) & set(dict2.keys())
 
-print("Sum:", total)
+print("Common keys:", common)

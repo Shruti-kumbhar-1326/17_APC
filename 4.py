@@ -1,9 +1,17 @@
-#4.	Create a tuple of colors. Check whether a given color exists in the tuple
-colors = ("red", "blue", "green", "yellow", "pink")
+# 4. Update student marks
 
-color = input("Enter a color to search: ")
+marks = {
+    "Amit": 75,
+    "Sneha": 85,
+    "Rahul": 70,
+    "Priya": 90
+}
 
-if color in colors:
-    print("Color exists in the tuple.")
+name = input("Enter student name: ")
+
+if name in marks:
+    new_marks = int(input("Enter new marks: "))
+    marks[name] = new_marks
+    print("Updated dictionary:", marks)
 else:
-    print("Color does not exist in the tuple.")
+    print("Student not found")

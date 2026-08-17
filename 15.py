@@ -1,13 +1,16 @@
-# 15. Nested tuple containing student details
+# 15. Word frequency
 
-students = (
-    (101, "Amit", 85),
-    (102, "Sneha", 90),
-    (103, "Rahul", 78)
-)
+sentence = input("Enter a sentence: ")
 
-for student in students:
-    print("Roll No:", student[0])
-    print("Name:", student[1])
-    print("Marks:", student[2])
-    print()
+words = sentence.split()
+
+frequency = {}
+
+for word in words:
+    if word in frequency:
+        frequency[word] = frequency[word] + 1
+    else:
+        frequency[word] = 1
+
+print("Word frequency:")
+print(frequency)

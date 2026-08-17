@@ -1,15 +1,14 @@
-# 19. Count even and odd numbers
+# 20. Sort dictionary by keys
 
-numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+data = {
+    4: "D",
+    2: "B",
+    5: "E",
+    1: "A",
+    3: "C"
+}
 
-even = 0
-odd = 0
+sorted_data = dict(sorted(data.items()))
 
-for num in numbers:
-    if num % 2 == 0:
-        even = even + 1
-    else:
-        odd = odd + 1
-
-print("Even numbers:", even)
-print("Odd numbers:", odd)
+print("Dictionary in ascending order:")
+print(sorted_data)

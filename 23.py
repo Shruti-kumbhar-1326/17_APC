@@ -1,25 +1,13 @@
-# 23. Calculate bill details
+# 23. Frequency of each number
 
-prices = (100, 250, 150, 500, 300)
+numbers = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
 
-total = 0
+frequency = {}
 
-for price in prices:
-    total = total + price
+for num in numbers:
+    if num in frequency:
+        frequency[num] = frequency[num] + 1
+    else:
+        frequency[num] = 1
 
-average = total / len(prices)
-
-highest = prices[0]
-lowest = prices[0]
-
-for price in prices:
-    if price > highest:
-        highest = price
-
-    if price < lowest:
-        lowest = price
-
-print("Total bill:", total)
-print("Average price:", average)
-print("Highest price:", highest)
-print("Lowest price:", lowest)
+print("Frequency:", frequency)

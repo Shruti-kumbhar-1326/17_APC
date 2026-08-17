@@ -1,13 +1,9 @@
-# 22. Employee information
+# 22. Even numbers and their squares
 
-employees = (
-    (101, "Amit", 30000),
-    (102, "Sneha", 35000),
-    (103, "Rahul", 40000)
-)
+squares = {}
 
-for employee in employees:
-    print("Employee ID:", employee[0])
-    print("Name:", employee[1])
-    print("Salary:", employee[2])
-    print()
+for i in range(1, 21):
+    if i % 2 == 0:
+        squares[i] = i * i
+
+print(squares)

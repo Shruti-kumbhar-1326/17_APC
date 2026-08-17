@@ -1,12 +1,17 @@
-# 18. Calculate average
+# 18. Find common values
 
-numbers = (10, 20, 30, 40, 50)
+dict1 = {
+    "A": 10,
+    "B": 20,
+    "C": 30
+}
 
-total = 0
+dict2 = {
+    "X": 20,
+    "Y": 40,
+    "Z": 30
+}
 
-for num in numbers:
-    total = total + num
+common = set(dict1.values()) & set(dict2.values())
 
-average = total / len(numbers)
-
-print("Average:", average)
+print("Common values:", common)

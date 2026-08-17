@@ -1,10 +1,10 @@
-# 7. Find index of given employee ID
+# 7. Count key-value pairs
 
-employee_ids = (101, 102, 103, 104, 105)
+students = {
+    "Amit": 80,
+    "Sneha": 90,
+    "Rahul": 75,
+    "Priya": 85
+}
 
-id = int(input("Enter employee ID: "))
-
-if id in employee_ids:
-    print("Index:", employee_ids.index(id))
-else:
-    print("Employee ID not found")
+print("Total key-value pairs:", len(students))

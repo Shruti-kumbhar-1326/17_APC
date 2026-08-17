@@ -1,5 +1,16 @@
-#5.	Create a tuple of fruits and display each fruit using a loop.
-fruits = ("Apple", "Banana", "Mango", "Orange", "Grapes")
+# 5. Remove city
 
-for fruit in fruits:
-    print(fruit)
+cities = {
+    "Pune": 7000000,
+    "Mumbai": 20000000,
+    "Delhi": 19000000,
+    "Nagpur": 3000000
+}
+
+city = input("Enter city to remove: ")
+
+if city in cities:
+    del cities[city]
+    print("Updated dictionary:", cities)
+else:
+    print("City not found")

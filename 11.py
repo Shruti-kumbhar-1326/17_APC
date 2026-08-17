@@ -1,9 +1,19 @@
-# 10. Perform different slicing operations
+# 11. Find student with highest marks
 
-numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+students = {
+    "Amit": 75,
+    "Sneha": 92,
+    "Rahul": 80,
+    "Priya": 88
+}
 
-print("First five elements:", numbers[:5])
-print("Last five elements:", numbers[5:])
-print("Middle four elements:", numbers[3:7])
-print("Alternate elements:", numbers[::2])
-print("Reverse tuple:", numbers[::-1])
+highest_student = ""
+highest_marks = 0
+
+for name, marks in students.items():
+    if marks > highest_marks:
+        highest_marks = marks
+        highest_student = name
+
+print("Highest marks:", highest_marks)
+print("Student:", highest_student)

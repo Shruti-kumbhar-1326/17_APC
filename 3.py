@@ -1,5 +1,14 @@
-#3.	Create a tuple of student names and display the total number of students using the len() function.
-students = ("Shruti", "Rahul", "Priya", "Amit", "Sneha")
+# 3. Add new product
 
-print("Student names:", students)
-print("Total number of students:", len(students))
+products = {
+    "Pen": 10,
+    "Book": 50,
+    "Bag": 500,
+    "Pencil": 5,
+    "Bottle": 100
+}
+
+products["Notebook"] = 80
+
+print("Updated dictionary:")
+print(products)

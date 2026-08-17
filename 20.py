@@ -1,10 +1,14 @@
-# 20. Check whether number exists in tuple
+# 20. Sort dictionary by keys
 
-numbers = (10, 20, 30, 40, 50)
+data = {
+    4: "D",
+    2: "B",
+    5: "E",
+    1: "A",
+    3: "C"
+}
 
-num = int(input("Enter a number: "))
+sorted_data = dict(sorted(data.items()))
 
-if num in numbers:
-    print("Number exists in the tuple")
-else:
-    print("Number does not exist in the tuple")
+print("Dictionary in ascending order:")
+print(sorted_data)

@@ -1,8 +1,16 @@
-# 8. Concatenate two tuples
+# 8. Display keys, values and key-value pairs
 
-tuple1 = (1, 2, 3)
-tuple2 = (4, 5, 6)
+student = {
+    "name": "Shruti",
+    "roll_no": 101,
+    "marks": 85
+}
 
-result = tuple1 + tuple2
+print("Keys:")
+print(student.keys())
 
-print("Combined tuple:", result)
+print("\nValues:")
+print(student.values())
+
+print("\nKey-value pairs:")
+print(student.items())

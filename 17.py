@@ -1,16 +1,17 @@
-# 17. Find largest and smallest number
+# 17. Find common keys
 
-numbers = (25, 10, 45, 5, 60, 30)
+dict1 = {
+    "A": 10,
+    "B": 20,
+    "C": 30
+}
 
-largest = numbers[0]
-smallest = numbers[0]
+dict2 = {
+    "B": 40,
+    "C": 50,
+    "D": 60
+}
 
-for num in numbers:
-    if num > largest:
-        largest = num
+common = set(dict1.keys()) & set(dict2.keys())
 
-    if num < smallest:
-        smallest = num
-
-print("Largest:", largest)
-print("Smallest:", smallest)
+print("Common keys:", common)

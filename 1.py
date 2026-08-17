@@ -1,3 +1,11 @@
-numbers = (10, 20, 30, 40, 50)
+# 1. Student details
 
-print("Tuple:", numbers)
+student = {
+    "roll_no": 101,
+    "name": "Shruti",
+    "department": "CSE",
+    "marks": 85
+}
+
+for key, value in student.items():
+    print(key, ":", value)
