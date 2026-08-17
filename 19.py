@@ -1,14 +1,12 @@
-# 20. Sort dictionary by keys
+# 19. Compare morning and afternoon students
 
-data = {
-    4: "D",
-    2: "B",
-    5: "E",
-    1: "A",
-    3: "C"
-}
+morning = {"Amit", "Sneha", "Rahul", "Priya"}
+afternoon = {"Rahul", "Priya", "Riya", "Karan"}
 
-sorted_data = dict(sorted(data.items()))
+print("Present in both sessions:", morning & afternoon)
 
-print("Dictionary in ascending order:")
-print(sorted_data)
+print("Only in morning:", morning - afternoon)
+
+print("Only in afternoon:", afternoon - morning)
+
+print("Present in at least one session:", morning | afternoon)

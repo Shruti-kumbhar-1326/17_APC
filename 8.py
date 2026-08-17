@@ -1,16 +1,8 @@
-# 8. Display keys, values and key-value pairs
+# 8. Remove duplicate numbers
 
-student = {
-    "name": "Shruti",
-    "roll_no": 101,
-    "marks": 85
-}
+numbers = [10, 20, 10, 30, 20, 40, 30, 50]
 
-print("Keys:")
-print(student.keys())
+unique_numbers = set(numbers)
 
-print("\nValues:")
-print(student.values())
-
-print("\nKey-value pairs:")
-print(student.items())
+print("Original list:", numbers)
+print("After removing duplicates:", unique_numbers)

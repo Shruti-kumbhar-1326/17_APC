@@ -1,13 +1,21 @@
-# 23. Frequency of each number
+# 23. Check requested books availability
 
-numbers = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+available_books = {
+    "Python",
+    "Java",
+    "C Programming",
+    "DBMS",
+    "Operating System"
+}
 
-frequency = {}
+requested_books = {
+    "Python",
+    "DBMS",
+    "HTML",
+    "Java"
+}
 
-for num in numbers:
-    if num in frequency:
-        frequency[num] = frequency[num] + 1
-    else:
-        frequency[num] = 1
+available_requested = available_books & requested_books
 
-print("Frequency:", frequency)
+print("Requested books that are available:")
+print(available_requested)

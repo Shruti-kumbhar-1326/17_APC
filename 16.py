@@ -1,17 +1,9 @@
-# 17. Find common keys
+# 16. Check equality of two sets
 
-dict1 = {
-    "A": 10,
-    "B": 20,
-    "C": 30
-}
+set1 = {1, 2, 3, 4}
+set2 = {1, 2, 3, 4}
 
-dict2 = {
-    "B": 40,
-    "C": 50,
-    "D": 60
-}
-
-common = set(dict1.keys()) & set(dict2.keys())
-
-print("Common keys:", common)
+if set1 == set2:
+    print("Both sets are equal")
+else:
+    print("Both sets are not equal")

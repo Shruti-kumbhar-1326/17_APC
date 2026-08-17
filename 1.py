@@ -1,11 +1,8 @@
-# 1. Student details
+# 1. Create a set containing five integers
 
-student = {
-    "roll_no": 101,
-    "name": "Shruti",
-    "department": "CSE",
-    "marks": 85
-}
+numbers = {10, 20, 30, 40, 50}
 
-for key, value in student.items():
-    print(key, ":", value)
+print("Set elements:")
+
+for num in numbers:
+    print(num)

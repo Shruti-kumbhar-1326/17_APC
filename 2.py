@@ -1,15 +1,8 @@
-# 2. Employee information
+# 2. Convert list into set
 
-employee = {
-    "id": 101,
-    "name": "Amit",
-    "department": "IT",
-    "salary": 50000
-}
+numbers = [10, 20, 10, 30, 20, 40, 30]
 
-key = input("Enter key: ")
+result = set(numbers)
 
-if key in employee:
-    print("Value:", employee[key])
-else:
-    print("Key not found")
+print("Original list:", numbers)
+print("Set:", result)

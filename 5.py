@@ -1,16 +1,10 @@
-# 5. Remove city
+# 5. Check student name
 
-cities = {
-    "Pune": 7000000,
-    "Mumbai": 20000000,
-    "Delhi": 19000000,
-    "Nagpur": 3000000
-}
+students = {"Amit", "Sneha", "Rahul", "Priya", "Riya"}
 
-city = input("Enter city to remove: ")
+name = input("Enter student name: ")
 
-if city in cities:
-    del cities[city]
-    print("Updated dictionary:", cities)
+if name in students:
+    print("Student exists")
 else:
-    print("City not found")
+    print("Student does not exist")

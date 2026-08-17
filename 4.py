@@ -1,17 +1,11 @@
-# 4. Update student marks
+# 4. Remove a number from set
 
-marks = {
-    "Amit": 75,
-    "Sneha": 85,
-    "Rahul": 70,
-    "Priya": 90
-}
+numbers = {10, 20, 30, 40, 50}
 
-name = input("Enter student name: ")
+num = int(input("Enter number to remove: "))
 
-if name in marks:
-    new_marks = int(input("Enter new marks: "))
-    marks[name] = new_marks
-    print("Updated dictionary:", marks)
+if num in numbers:
+    numbers.remove(num)
+    print("Updated set:", numbers)
 else:
-    print("Student not found")
+    print("Number not found")

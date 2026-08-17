@@ -1,14 +1,7 @@
-# 20. Sort dictionary by keys
+# 20. Students enrolled in Python and Java
 
-data = {
-    4: "D",
-    2: "B",
-    5: "E",
-    1: "A",
-    3: "C"
-}
+python_students = {"Amit", "Sneha", "Rahul", "Priya"}
+java_students = {"Rahul", "Priya", "Riya", "Karan"}
 
-sorted_data = dict(sorted(data.items()))
-
-print("Dictionary in ascending order:")
-print(sorted_data)
+print("Python students:", python_students)
+print("Java students:", java_students)

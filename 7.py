@@ -1,10 +1,6 @@
-# 7. Count key-value pairs
+# 7. Display programming languages
 
-students = {
-    "Amit": 80,
-    "Sneha": 90,
-    "Rahul": 75,
-    "Priya": 85
-}
+languages = {"Python", "Java", "C", "C++", "JavaScript"}
 
-print("Total key-value pairs:", len(students))
+for language in languages:
+    print(language)

@@ -1,12 +1,8 @@
-# 10. Accept five student names and marks
+# 10. Common elements
 
-students = {}
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
 
-for i in range(5):
-    name = input("Enter student name: ")
-    marks = int(input("Enter marks: "))
+common = set1.intersection(set2)
 
-    students[name] = marks
-
-print("Student dictionary:")
-print(students)
+print("Common elements:", common)

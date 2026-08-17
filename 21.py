@@ -1,8 +1,10 @@
-# 21. Numbers and their squares
+# 21. Find students enrolled in both and only one course
 
-squares = {}
+python_students = {"Amit", "Sneha", "Rahul", "Priya"}
+java_students = {"Rahul", "Priya", "Riya", "Karan"}
 
-for i in range(1, 11):
-    squares[i] = i * i
+both = python_students & java_students
+only_one = python_students ^ java_students
 
-print(squares)
+print("Students enrolled in both:", both)
+print("Students enrolled in only one course:", only_one)

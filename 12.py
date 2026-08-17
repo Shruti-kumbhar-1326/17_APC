@@ -1,19 +1,8 @@
-# 12. Find student with lowest marks
+# 12. Symmetric difference
 
-students = {
-    "Amit": 75,
-    "Sneha": 92,
-    "Rahul": 60,
-    "Priya": 88
-}
+set1 = {1, 2, 3, 4}
+set2 = {3, 4, 5, 6}
 
-lowest_student = ""
-lowest_marks = None
+result = set1.symmetric_difference(set2)
 
-for name, marks in students.items():
-    if lowest_marks is None or marks < lowest_marks:
-        lowest_marks = marks
-        lowest_student = name
-
-print("Lowest marks:", lowest_marks)
-print("Student:", lowest_student)
+print("Elements in either set but not both:", result)

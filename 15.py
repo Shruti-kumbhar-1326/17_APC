@@ -1,16 +1,9 @@
-# 15. Word frequency
+# 15. Check whether two sets have no common elements
 
-sentence = input("Enter a sentence: ")
+set1 = {1, 2, 3}
+set2 = {4, 5, 6}
 
-words = sentence.split()
-
-frequency = {}
-
-for word in words:
-    if word in frequency:
-        frequency[word] = frequency[word] + 1
-    else:
-        frequency[word] = 1
-
-print("Word frequency:")
-print(frequency)
+if set1.isdisjoint(set2):
+    print("Sets have no elements in common")
+else:
+    print("Sets have common elements")

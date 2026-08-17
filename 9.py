@@ -1,11 +1,8 @@
-# 9. Programming languages and creators
+# 9. Union of two sets
 
-languages = {
-    "Python": "Guido van Rossum",
-    "C": "Dennis Ritchie",
-    "Java": "James Gosling",
-    "C++": "Bjarne Stroustrup"
-}
+set1 = {1, 2, 3, 4}
+set2 = {4, 5, 6, 7}
 
-for language, creator in languages.items():
-    print(language, ":", creator)
+result = set1.union(set2)
+
+print("Union:", result)

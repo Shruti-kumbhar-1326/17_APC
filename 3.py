@@ -1,14 +1,8 @@
-# 3. Add new product
+# 3. Add two fruits to a set
 
-products = {
-    "Pen": 10,
-    "Book": 50,
-    "Bag": 500,
-    "Pencil": 5,
-    "Bottle": 100
-}
+fruits = {"Apple", "Mango", "Banana", "Orange", "Grapes"}
 
-products["Notebook"] = 80
+fruits.add("Pineapple")
+fruits.add("Watermelon")
 
-print("Updated dictionary:")
-print(products)
+print("Updated set:", fruits)

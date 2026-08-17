@@ -1,9 +1,9 @@
-# 14. Delete a tuple completely
+# 14. Check whether first set is superset of second
 
-numbers = (10, 20, 30, 40)
+set1 = {1, 2, 3, 4, 5}
+set2 = {1, 2, 3}
 
-print("Tuple:", numbers)
-
-del numbers
-
-print("Tuple deleted successfully")
+if set1.issuperset(set2):
+    print("First set is a superset of second set")
+else:
+    print("First set is not a superset of second set")

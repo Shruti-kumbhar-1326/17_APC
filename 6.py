@@ -1,16 +1,5 @@
-# 6. Check employee ID
+# 6. Count cities
 
-employees = {
-    101: "Amit",
-    102: "Sneha",
-    103: "Rahul",
-    104: "Priya"
-}
+cities = {"Pune", "Mumbai", "Kolhapur", "Nashik", "Nagpur"}
 
-emp_id = int(input("Enter employee ID: "))
-
-if emp_id in employees:
-    print("Employee exists")
-    print("Name:", employees[emp_id])
-else:
-    print("Employee does not exist")
+print("Total cities:", len(cities))

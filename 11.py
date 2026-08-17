@@ -1,19 +1,7 @@
-# 11. Find student with highest marks
+# 11. Difference between two sets
 
-students = {
-    "Amit": 75,
-    "Sneha": 92,
-    "Rahul": 80,
-    "Priya": 88
-}
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
 
-highest_student = ""
-highest_marks = 0
-
-for name, marks in students.items():
-    if marks > highest_marks:
-        highest_marks = marks
-        highest_student = name
-
-print("Highest marks:", highest_marks)
-print("Student:", highest_student)
+print("Only in first set:", set1 - set2)
+print("Only in second set:", set2 - set1)

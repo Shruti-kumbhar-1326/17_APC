@@ -1,22 +1,12 @@
-# 24. Temperature calculations
+# 24. Compare visitors from two days
 
-temperatures = (30, 32, 29, 35, 31, 28, 33)
+day1 = {101, 102, 103, 104, 105}
+day2 = {103, 104, 105, 106, 107}
 
-total = 0
-maximum = temperatures[0]
-minimum = temperatures[0]
+print("Unique visitors across both days:", day1 | day2)
 
-for temp in temperatures:
-    total = total + temp
+print("Returning visitors:", day1 & day2)
 
-    if temp > maximum:
-        maximum = temp
+print("Visitors only on first day:", day1 - day2)
 
-    if temp < minimum:
-        minimum = temp
-
-average = total / len(temperatures)
-
-print("Maximum temperature:", maximum)
-print("Minimum temperature:", minimum)
-print("Average temperature:", average)
+print("Visitors only on second day:", day2 - day1)

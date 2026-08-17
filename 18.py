@@ -1,17 +1,9 @@
-# 18. Find common values
+# 18. Find unique words
 
-dict1 = {
-    "A": 10,
-    "B": 20,
-    "C": 30
-}
+sentence = input("Enter a sentence: ")
 
-dict2 = {
-    "X": 20,
-    "Y": 40,
-    "Z": 30
-}
+words = sentence.split()
 
-common = set(dict1.values()) & set(dict2.values())
+unique_words = set(words)
 
-print("Common values:", common)
+print("Unique words:", unique_words)
