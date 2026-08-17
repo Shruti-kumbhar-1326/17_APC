@@ -1,8 +1,23 @@
-# 2. Convert list into set
+# Program to count vowels, consonants, digits, spaces, and special characters
 
-numbers = [10, 20, 10, 30, 20, 40, 30]
+string = input("Enter a string: ")
 
-result = set(numbers)
+vowels = consonants = digits = spaces = special = 0
 
-print("Original list:", numbers)
-print("Set:", result)
+for ch in string:
+    if ch in "aeiouAEIOU":
+        vowels += 1
+    elif ch.isalpha():
+        consonants += 1
+    elif ch.isdigit():
+        digits += 1
+    elif ch == " ":
+        spaces += 1
+    else:
+        special += 1
+
+print("Vowels:", vowels)
+print("Consonants:", consonants)
+print("Digits:", digits)
+print("Spaces:", spaces)
+print("Special Characters:", special)

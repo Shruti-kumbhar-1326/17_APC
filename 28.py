@@ -1,60 +1,18 @@
-# 28. Contact management
+#28.	Word Frequency Dictionary 
+#	Count the frequency of every word in a paragraph. 
 
-contacts = {
-    "Amit": "9876543210",
-    "Sneha": "9876501234"
-}
+paragraph = input("Enter a paragraph: ")
 
-while True:
+words = paragraph.split()
 
-    print("\n1. Add contact")
-    print("2. Search contact")
-    print("3. Update contact")
-    print("4. Delete contact")
-    print("5. Display all contacts")
-    print("6. Exit")
+freq = {}
 
-    choice = int(input("Enter choice: "))
-
-    if choice == 1:
-        name = input("Enter name: ")
-        phone = input("Enter phone number: ")
-        contacts[name] = phone
-        print("Contact added")
-
-    elif choice == 2:
-        name = input("Enter name: ")
-
-        if name in contacts:
-            print("Phone:", contacts[name])
-        else:
-            print("Contact not found")
-
-    elif choice == 3:
-        name = input("Enter name: ")
-
-        if name in contacts:
-            phone = input("Enter new phone number: ")
-            contacts[name] = phone
-            print("Contact updated")
-        else:
-            print("Contact not found")
-
-    elif choice == 4:
-        name = input("Enter name: ")
-
-        if name in contacts:
-            del contacts[name]
-            print("Contact deleted")
-        else:
-            print("Contact not found")
-
-    elif choice == 5:
-        for name, phone in contacts.items():
-            print(name, ":", phone)
-
-    elif choice == 6:
-        break
-
+for word in words:
+    if word in freq:
+        freq[word] += 1
     else:
-        print("Invalid choice")
+        freq[word] = 1
+
+print("Word Frequency:")
+for word in freq:
+    print(word, ":", freq[word])

@@ -1,8 +1,9 @@
-# 1. Create a set containing five integers
+# Program to find the length of a string without using len()
 
-numbers = {10, 20, 30, 40, 50}
+string = input("Enter a string: ")
 
-print("Set elements:")
+count = 0
+for ch in string:
+    count += 1
 
-for num in numbers:
-    print(num)
+print("Length of the string is:", count)

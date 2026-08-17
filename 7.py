@@ -1,6 +1,11 @@
-# 7. Display programming languages
+# Program to remove all spaces from a string
 
-languages = {"Python", "Java", "C", "C++", "JavaScript"}
+string = input("Enter a string: ")
 
-for language in languages:
-    print(language)
+result = ""
+
+for ch in string:
+    if ch != " ":
+        result += ch
+
+print("String without spaces:", result)

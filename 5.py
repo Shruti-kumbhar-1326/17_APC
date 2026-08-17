@@ -1,10 +1,15 @@
-# 5. Check student name
+# Program to count uppercase and lowercase letters
 
-students = {"Amit", "Sneha", "Rahul", "Priya", "Riya"}
+string = input("Enter a string: ")
 
-name = input("Enter student name: ")
+uppercase = 0
+lowercase = 0
 
-if name in students:
-    print("Student exists")
-else:
-    print("Student does not exist")
+for ch in string:
+    if ch.isupper():
+        uppercase += 1
+    elif ch.islower():
+        lowercase += 1
+
+print("Uppercase letters:", uppercase)
+print("Lowercase letters:", lowercase)

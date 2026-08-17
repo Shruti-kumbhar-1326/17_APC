@@ -1,12 +1,8 @@
-# 19. Compare morning and afternoon students
+#substring search
+main_string = input("Enter the main string: ")
+substring = input("Enter the substring: ")
 
-morning = {"Amit", "Sneha", "Rahul", "Priya"}
-afternoon = {"Rahul", "Priya", "Riya", "Karan"}
-
-print("Present in both sessions:", morning & afternoon)
-
-print("Only in morning:", morning - afternoon)
-
-print("Only in afternoon:", afternoon - morning)
-
-print("Present in at least one session:", morning | afternoon)
+if substring in main_string:
+    print("Substring found.")
+else:
+    print("Substring not found.")

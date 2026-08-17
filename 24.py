@@ -1,12 +1,14 @@
-# 24. Compare visitors from two days
+#most freqent character 
+string = input("Enter a string: ")
 
-day1 = {101, 102, 103, 104, 105}
-day2 = {103, 104, 105, 106, 107}
+max_count = 0
+max_char = ""
 
-print("Unique visitors across both days:", day1 | day2)
+for ch in string:
+    count = string.count(ch)
+    if count > max_count:
+        max_count = count
+        max_char = ch
 
-print("Returning visitors:", day1 & day2)
-
-print("Visitors only on first day:", day1 - day2)
-
-print("Visitors only on second day:", day2 - day1)
+print("Most frequent character:", max_char)
+print("Frequency:", max_count)

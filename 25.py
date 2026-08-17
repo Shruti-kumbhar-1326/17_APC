@@ -1,12 +1,24 @@
-# 25. Compare friends of two users
+#second most freqent character 
+string = input("Enter a string: ")
 
-user1 = {"Amit", "Rahul", "Sneha", "Priya", "Karan"}
-user2 = {"Rahul", "Priya", "Riya", "Karan", "Neha"}
+max1 = 0
+max2 = 0
+char1 = ""
+char2 = ""
 
-print("Mutual friends:", user1 & user2)
+for ch in string:
+    count = string.count(ch)
 
-print("Friends unique to User 1:", user1 - user2)
+    if count > max1:
+        max2 = max1
+        char2 = char1
 
-print("Friends unique to User 2:", user2 - user1)
+        max1 = count
+        char1 = ch
 
-print("Total unique friends:", len(user1 | user2))
+    elif count > max2 and ch != char1:
+        max2 = count
+        char2 = ch
+
+print("Second most frequent character:", char2)
+print("Frequency:", max2)

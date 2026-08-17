@@ -1,10 +1,23 @@
-# 21. Find students enrolled in both and only one course
+#Password Validator
+password = input("Enter Password: ")
 
-python_students = {"Amit", "Sneha", "Rahul", "Priya"}
-java_students = {"Rahul", "Priya", "Riya", "Karan"}
+upper = lower = digit = special = 0
 
-both = python_students & java_students
-only_one = python_students ^ java_students
+if len(password) >= 8:
 
-print("Students enrolled in both:", both)
-print("Students enrolled in only one course:", only_one)
+    for ch in password:
+        if ch.isupper():
+            upper += 1
+        elif ch.islower():
+            lower += 1
+        elif ch.isdigit():
+            digit += 1
+        else:
+            special += 1
+
+    if upper >= 1 and lower >= 1 and digit >= 1 and special >= 1:
+        print("Valid Password")
+    else:
+        print("Invalid Password")
+else:
+    print("Password must be at least 8 characters long")

@@ -1,14 +1,14 @@
-# 27. Merge two tuples and remove duplicates
+#27.	Email Validator 
+	#Validate whether a given email address follows a valid format. 
 
-tuple1 = (1, 2, 3, 4)
-tuple2 = (3, 4, 5, 6)
+email = input("Enter an email address: ")
 
-merged = tuple1 + tuple2
-
-result = ()
-
-for num in merged:
-    if num not in result:
-        result = result + (num,)
-
-print("Merged tuple without duplicates:", result)
+if ("@" in email and
+    email.count("@") == 1 and
+    "." in email and
+    email.index("@") < email.rindex(".") and
+    email[0] != "@" and
+    email[-1] != "."):
+    print("Valid Email")
+else:
+    print("Invalid Email")

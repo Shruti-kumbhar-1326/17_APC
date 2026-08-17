@@ -1,8 +1,11 @@
-# 17. Find common subjects
+str1 = input("Enter first string: ")
+str2 = input("Enter second string: ")
 
-student1 = {"Python", "Java", "C", "DBMS"}
-student2 = {"Java", "Python", "HTML", "OS"}
+# Convert to lowercase
+str1 = str1.lower()
+str2 = str2.lower()
 
-common = student1.intersection(student2)
-
-print("Subjects studied by both:", common)
+if sorted(str1) == sorted(str2):
+    print("The strings are Anagrams.")
+else:
+    print("The strings are Not Anagrams.")

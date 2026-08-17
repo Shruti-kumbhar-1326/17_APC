@@ -1,8 +1,6 @@
-# 10. Common elements
+# Program to display ASCII value of each character in a string
 
-set1 = {1, 2, 3, 4, 5}
-set2 = {4, 5, 6, 7, 8}
+string = input("Enter a string: ")
 
-common = set1.intersection(set2)
-
-print("Common elements:", common)
+for ch in string:
+    print(ch, "=", ord(ch))

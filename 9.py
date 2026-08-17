@@ -1,8 +1,6 @@
-# 9. Union of two sets
+# Program to print the first and last character of a string
 
-set1 = {1, 2, 3, 4}
-set2 = {4, 5, 6, 7}
+string = input("Enter a string: ")
 
-result = set1.union(set2)
-
-print("Union:", result)
+print("First character:", string[0])
+print("Last character:", string[-1])

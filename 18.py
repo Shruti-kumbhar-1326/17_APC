@@ -1,9 +1,10 @@
-# 18. Find unique words
+# Remove duplicate character
+str1 = input("Enter a string: ")
 
-sentence = input("Enter a sentence: ")
+result = ""
 
-words = sentence.split()
+for ch in str1:
+    if ch not in result:
+        result = result + ch
 
-unique_words = set(words)
-
-print("Unique words:", unique_words)
+print("String after removing duplicates:", result)

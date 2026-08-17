@@ -1,12 +1,10 @@
-# 22. Compare technical skills
+string = input("Enter a string: ")
 
-employee1 = {"Python", "Java", "SQL", "HTML"}
-employee2 = {"Python", "C++", "SQL", "CSS"}
+count = 1
 
-print("Common skills:", employee1 & employee2)
-
-print("Skills unique to Employee 1:", employee1 - employee2)
-
-print("Skills unique to Employee 2:", employee2 - employee1)
-
-print("All available skills:", employee1 | employee2)
+for i in range(len(string)):
+    if i < len(string) - 1 and string[i] == string[i + 1]:
+        count += 1
+    else:
+        print(string[i] + str(count), end="")
+        count = 1

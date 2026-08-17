@@ -1,7 +1,11 @@
-# 11. Difference between two sets
+# Program to count the number of words using ASCII value
 
-set1 = {1, 2, 3, 4, 5}
-set2 = {4, 5, 6, 7, 8}
+string = input("Enter a sentence: ")
 
-print("Only in first set:", set1 - set2)
-print("Only in second set:", set2 - set1)
+count = 1
+
+for ch in string:
+    if ord(ch) == 32:      # ASCII value of space is 32
+        count += 1
+
+print("Total number of words:", count)

@@ -1,8 +1,14 @@
-# 12. Symmetric difference
+# Program to find the longest word in a sentence
 
-set1 = {1, 2, 3, 4}
-set2 = {3, 4, 5, 6}
+sentence = input("Enter a sentence: ")
 
-result = set1.symmetric_difference(set2)
+words = sentence.split()
 
-print("Elements in either set but not both:", result)
+longest = words[0]
+
+for word in words:
+    if len(word) > len(longest):
+        longest = word
+
+print("Longest word:", longest)
+print("Length:", len(longest))

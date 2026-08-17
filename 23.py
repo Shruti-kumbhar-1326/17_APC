@@ -1,21 +1,16 @@
-# 23. Check requested books availability
+string = input("Enter a string: ")
 
-available_books = {
-    "Python",
-    "Java",
-    "C Programming",
-    "DBMS",
-    "Operating System"
-}
+compressed = ""
+count = 1
 
-requested_books = {
-    "Python",
-    "DBMS",
-    "HTML",
-    "Java"
-}
+for i in range(len(string)):
+    if i < len(string) - 1 and string[i] == string[i + 1]:
+        count += 1
+    else:
+        compressed = compressed + string[i] + str(count)
+        count = 1
 
-available_requested = available_books & requested_books
-
-print("Requested books that are available:")
-print(available_requested)
+if len(compressed) < len(string):
+    print("Compressed String:", compressed)
+else:
+    print("Original String:", string)

@@ -1,11 +1,13 @@
-# 4. Remove a number from set
+# Program to check whether a string is palindrome
 
-numbers = {10, 20, 30, 40, 50}
+string = input("Enter a string: ")
 
-num = int(input("Enter number to remove: "))
+reverse = ""
 
-if num in numbers:
-    numbers.remove(num)
-    print("Updated set:", numbers)
+for ch in string:
+    reverse = ch + reverse
+
+if string == reverse:
+    print("The string is a Palindrome.")
 else:
-    print("Number not found")
+    print("The string is not a Palindrome.")

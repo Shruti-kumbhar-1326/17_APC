@@ -1,23 +1,31 @@
-# 26. Employee salary operations
+#Caesar Cipher
+message = input("Enter the message: ")
+shift = int(input("Enter the shift value: "))
 
-employees = {
-    "Amit": 45000,
-    "Sneha": 60000,
-    "Rahul": 55000,
-    "Priya": 40000
-}
+encrypted = ""
 
-highest = max(employees.values())
-lowest = min(employees.values())
+# Encryption
+for ch in message:
+    if ch.isalpha():
+        if ch.isupper():
+            encrypted += chr((ord(ch) - 65 + shift) % 26 + 65)
+        else:
+            encrypted += chr((ord(ch) - 97 + shift) % 26 + 97)
+    else:
+        encrypted += ch
 
-average = sum(employees.values()) / len(employees)
+print("Encrypted Message:", encrypted)
 
-print("Highest salary:", highest)
-print("Lowest salary:", lowest)
-print("Average salary:", average)
+# Decryption
+decrypted = ""
 
-print("Employees earning more than 50000:")
+for ch in encrypted:
+    if ch.isalpha():
+        if ch.isupper():
+            decrypted += chr((ord(ch) - 65 - shift) % 26 + 65)
+        else:
+            decrypted += chr((ord(ch) - 97 - shift) % 26 + 97)
+    else:
+        decrypted += ch
 
-for name, salary in employees.items():
-    if salary > 50000:
-        print(name, ":", salary)
+print("Decrypted Message:", decrypted)

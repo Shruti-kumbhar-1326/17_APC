@@ -1,9 +1,21 @@
-# 15. Check whether two sets have no common elements
+# Program to print duplicate characters in a string
 
-set1 = {1, 2, 3}
-set2 = {4, 5, 6}
+string = input("Enter a string: ")
 
-if set1.isdisjoint(set2):
-    print("Sets have no elements in common")
-else:
-    print("Sets have common elements")
+print("Duplicate characters are:")
+
+for i in range(len(string)):
+    count = 0
+    for j in range(len(string)):
+        if string[i] == string[j]:
+            count += 1
+
+    if count > 1:
+        printed = False
+        for k in range(i):
+            if string[i] == string[k]:
+                printed = True
+                break
+
+        if not printed:
+            print(string[i])

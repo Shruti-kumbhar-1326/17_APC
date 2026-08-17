@@ -1,8 +1,12 @@
-# 8. Remove duplicate numbers
+# Program to find the frequency of a character
 
-numbers = [10, 20, 10, 30, 20, 40, 30, 50]
+string = input("Enter a string: ")
+ch = input("Enter the character to find: ")
 
-unique_numbers = set(numbers)
+count = 0
 
-print("Original list:", numbers)
-print("After removing duplicates:", unique_numbers)
+for i in string:
+    if i == ch:
+        count += 1
+
+print("Frequency of", ch, "is:", count)

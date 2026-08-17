@@ -1,7 +1,12 @@
-# 20. Students enrolled in Python and Java
+#Count how many times a specific word appears in a sentence
+sentence = input("Enter a sentence: ")
+word = input("Enter the word to count: ")
 
-python_students = {"Amit", "Sneha", "Rahul", "Priya"}
-java_students = {"Rahul", "Priya", "Riya", "Karan"}
+words = sentence.split()
+count = 0
 
-print("Python students:", python_students)
-print("Java students:", java_students)
+for w in words:
+    if w == word:
+        count += 1
+
+print("Occurrences of", word, "=", count)

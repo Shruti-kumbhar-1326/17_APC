@@ -1,5 +1,15 @@
-# 6. Count cities
+# Program to replace all occurrences of a character
 
-cities = {"Pune", "Mumbai", "Kolhapur", "Nashik", "Nagpur"}
+string = input("Enter a string: ")
+old = input("Enter the character to replace: ")
+new = input("Enter the new character: ")
 
-print("Total cities:", len(cities))
+result = ""
+
+for ch in string:
+    if ch == old:
+        result += new
+    else:
+        result += ch
+
+print("Updated string:", result)

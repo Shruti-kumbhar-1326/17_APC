@@ -1,8 +1,10 @@
-# 3. Add two fruits to a set
+# Program to reverse a string without using built-in reverse functions
 
-fruits = {"Apple", "Mango", "Banana", "Orange", "Grapes"}
+string = input("Enter a string: ")
 
-fruits.add("Pineapple")
-fruits.add("Watermelon")
+reverse = ""
 
-print("Updated set:", fruits)
+for ch in string:
+    reverse = ch + reverse
+
+print("Reversed string:", reverse)
