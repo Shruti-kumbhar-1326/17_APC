@@ -1,27 +1,12 @@
-#18.	Create a shopping cart using a list.Perform:
-#•	Add item 
-#•	Search item 
-#•	Display cart 
-#•	Count total items
-cart = []
+# 18. Calculate average
 
-# Add items
-n = int(input("How many items do you want to add? "))
+numbers = (10, 20, 30, 40, 50)
 
-for i in range(n):
-    item = input("Enter item: ")
-    cart.append(item)
+total = 0
 
-# Search item
-search = input("Enter item to search: ")
+for num in numbers:
+    total = total + num
 
-if search in cart:
-    print("Item found in cart.")
-else:
-    print("Item not found in cart.")
+average = total / len(numbers)
 
-# Display cart
-print("Shopping Cart:", cart)
-
-# Count total items
-print("Total items:", len(cart))
+print("Average:", average)

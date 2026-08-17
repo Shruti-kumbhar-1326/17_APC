@@ -1,16 +1,11 @@
-#13. Accept 10 numbers and sort them in:
-   # •	Ascending order
-    #•	Descending order
-numbers = []
+# 13. Modify a tuple
 
-for i in range(10):
-    num = int(input("Enter a number: "))
-    numbers.append(num)
+numbers = (10, 20, 30, 40)
 
-# Ascending order
-numbers.sort()
-print("Ascending order:", numbers)
+my_list = list(numbers)
 
-# Descending order
-numbers.sort(reverse=True)
-print("Descending order:", numbers)
+my_list[1] = 200
+
+numbers = tuple(my_list)
+
+print("Modified tuple:", numbers)

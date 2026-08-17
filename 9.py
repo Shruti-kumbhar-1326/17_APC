@@ -1,9 +1,7 @@
-#9.	Create a list of cities. Ask the user to enter a city name and check whether it exists in the list.
-city = ["kagal", "kolhapur", "sulkud", "tasgaon", "pune"]
+# 9. Repeat tuple four times
 
-name = input("Enter a city name to check: ")
+numbers = (1, 2, 3)
 
-if name in city:
-    print("City exists in the list.")
-else:
-    print("City does not exist in the list.")   
+result = numbers * 4
+
+print("Repeated tuple:", result)

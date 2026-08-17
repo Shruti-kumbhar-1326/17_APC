@@ -1,10 +1,9 @@
-#1. Write a program to reverse a list without using the `reverse()` method.
-numbers = [10, 20, 30, 40, 50]
+# 10. Perform different slicing operations
 
-reverse = []
+numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
-for i in range(len(numbers) - 1, -1, -1):
-    reverse.append(numbers[i])
-
-print("Original list:", numbers)
-print("Reversed list:", reverse)
+print("First five elements:", numbers[:5])
+print("Last five elements:", numbers[5:])
+print("Middle four elements:", numbers[3:7])
+print("Alternate elements:", numbers[::2])
+print("Reverse tuple:", numbers[::-1])

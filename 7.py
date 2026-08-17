@@ -1,19 +1,10 @@
-#7.	Accept 10 numbers from the user and store them in a list. Calculate:
-#•	Sum 
-#•	Average 
-numbers = []
+# 7. Find index of given employee ID
 
-for i in range(10):
-    num = int(input("Enter a number: "))
-    numbers.append(num)
+employee_ids = (101, 102, 103, 104, 105)
 
-sum = 0
-for num in numbers:
-    sum = sum + num
+id = int(input("Enter employee ID: "))
 
-average = sum / 10
-
-print("List:", numbers)
-print("Sum:", sum)
-print("Average:", average)
-
+if id in employee_ids:
+    print("Index:", employee_ids.index(id))
+else:
+    print("Employee ID not found")

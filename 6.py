@@ -1,20 +1,7 @@
-#6.	Write a program to find the largest and smallest number in a list without using max() or min().
-# Find largest and smallest number in a list
+# 6. Count how many times a number appears
 
-numbers = [10, 25, 5, 40, 15]
+numbers = (10, 20, 10, 30, 10, 40, 20, 10)
 
-largest = numbers[0]
-smallest = numbers[0]
+num = int(input("Enter a number: "))
 
-for num in numbers:
-    if num > largest:
-        largest = num
-
-    if num < smallest:
-        smallest = num
-
-print("List:", numbers)
-print("Largest number:", largest)
-print("Smallest number:", smallest)
-
-
+print("Number of times it appears:", numbers.count(num))

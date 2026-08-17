@@ -1,7 +1,13 @@
-#15. Find the second largest element in a list.
-numbers = [10, 25, 45, 30, 50, 20]
+# 15. Nested tuple containing student details
 
-numbers.sort()
+students = (
+    (101, "Amit", 85),
+    (102, "Sneha", 90),
+    (103, "Rahul", 78)
+)
 
-print("List:", numbers)
-print("Second largest element:", numbers[-2])
+for student in students:
+    print("Roll No:", student[0])
+    print("Name:", student[1])
+    print("Marks:", student[2])
+    print()

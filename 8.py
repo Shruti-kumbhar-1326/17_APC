@@ -1,21 +1,8 @@
-#8.	Store 15 integers in a list. Count how many numbers are:
-#•	Even 
-#•	Odd
-numbers = []
+# 8. Concatenate two tuples
 
-for i in range(15):
-    num = int(input("Enter a number: "))
-    numbers.append(num)
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
 
-even = 0
-odd = 0
+result = tuple1 + tuple2
 
-for num in numbers:
-    if num % 2 == 0:
-        even = even + 1
-    else:
-        odd = odd + 1
-
-print("List:", numbers)
-print("Even numbers:", even)
-print("Odd numbers:", odd)
+print("Combined tuple:", result)

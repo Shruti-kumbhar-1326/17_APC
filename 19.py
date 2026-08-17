@@ -1,35 +1,15 @@
-#19.	Store names of students present in class.Display:
-#•	Total students 
-#•	Search a student's attendance 
-#•	Add a new student 
-#•	Remove an absent student 
-students = ["Shruti", "Rahul", "Priya", "Amit", "Sneha"]
+# 19. Count even and odd numbers
 
-# Display total students
-print("Total students:", len(students))
+numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
 
-# Search student's attendance
-name = input("Enter student name to search: ")
+even = 0
+odd = 0
 
-if name in students:
-    print(name, "is present.")
-else:
-    print(name, "is absent.")
+for num in numbers:
+    if num % 2 == 0:
+        even = even + 1
+    else:
+        odd = odd + 1
 
-# Add a new student
-new_student = input("Enter new student name: ")
-students.append(new_student)
-
-print("Student added successfully.")
-
-# Remove an absent student
-absent = input("Enter absent student name to remove: ")
-
-if absent in students:
-    students.remove(absent)
-    print("Absent student removed.")
-else:
-    print("Student not found.")
-
-# Display final list
-print("Students present:", students)
+print("Even numbers:", even)
+print("Odd numbers:", odd)

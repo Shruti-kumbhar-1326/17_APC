@@ -1,23 +1,9 @@
-#4.	Create a list of numbers. Add:
-#•	One element at the end 
-#•	One element at the beginning 
-#•	One element at a specified position 
-# Create a list of numbers
-numbers = [10, 20, 30, 40, 50]
+#4.	Create a tuple of colors. Check whether a given color exists in the tuple
+colors = ("red", "blue", "green", "yellow", "pink")
 
-print("Original number list:", numbers)
+color = input("Enter a color to search: ")
 
-# Add one element at the end
-numbers.append(60)
-print("Add at end:", numbers)
-
-# Add one element at the beginning
-numbers.insert(0, 5)
-print("Add at beginning:", numbers)
-
-# Add one element at a specified position
-position = int(input("Enter the position: "))
-element = int(input("Enter the element: "))
-
-numbers.insert(position, element)
-print("After adding at specified position:", numbers)
+if color in colors:
+    print("Color exists in the tuple.")
+else:
+    print("Color does not exist in the tuple.")
