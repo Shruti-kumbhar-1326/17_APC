@@ -1,18 +1,17 @@
-# 32. Two sum using dictionary
+#31.	Check whether a string is a palindrome using recursion.
+def is_palindrome(string):
+    if len(string) <= 1:
+        return True
 
-numbers = [2, 7, 11, 15, 3, 6]
-target = int(input("Enter target value: "))
+    if string[0] != string[-1]:
+        return False
 
-seen = {}
+    return is_palindrome(string[1:-1])
 
-for num in numbers:
 
-    required = target - num
+string = input("Enter a string: ")
 
-    if required in seen:
-        print("Two numbers are:", required, "and", num)
-        break
-
-    seen[num] = True
+if is_palindrome(string):
+    print("Palindrome")
 else:
-    print("No two numbers found")
+    print("Not a Palindrome")

@@ -1,21 +1,18 @@
-# Program to display the frequency of every character
+#16.	Create a function to find the second-largest number in a list.
+def second_largest(numbers):
+    largest = numbers[0]
+    second = None
 
-string = input("Enter a string: ")
+    for num in numbers:
+        if num > largest:
+            second = largest
+            largest = num
+        elif num != largest and (second is None or num > second):
+            second = num
 
-for i in range(len(string)):
-    count = 0
-    printed = False
+    return second
 
-    # Check if character is already printed
-    for k in range(i):
-        if string[i] == string[k]:
-            printed = True
-            break
 
-    if not printed:
-        # Count frequency
-        for j in range(len(string)):
-            if string[i] == string[j]:
-                count += 1
+numbers = [10, 25, 7, 45, 18]
 
-        print(string[i], "=", count)
+print("Second largest =", second_largest(numbers))

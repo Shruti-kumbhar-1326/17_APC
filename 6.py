@@ -1,15 +1,6 @@
-# Program to replace all occurrences of a character
+def area_of_circle(r):
+    area = 3.14 * r * r
+    return area
 
-string = input("Enter a string: ")
-old = input("Enter the character to replace: ")
-new = input("Enter the new character: ")
-
-result = ""
-
-for ch in string:
-    if ch == old:
-        result += new
-    else:
-        result += ch
-
-print("Updated string:", result)
+radius = float(input("Enter radius: "))
+print("Area of circle =", area_of_circle(radius))

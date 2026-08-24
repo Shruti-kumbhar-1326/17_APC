@@ -1,23 +1,18 @@
-#Password Validator
-password = input("Enter Password: ")
+#21.	Create a function that accepts item prices and quantities and returns the total bill after applying a discount.
+def calculate_bill(prices, quantities):
+    total = 0
 
-upper = lower = digit = special = 0
+    for i in range(len(prices)):
+        total += prices[i] * quantities[i]
 
-if len(password) >= 8:
+    # 10% discount
+    discount = total * 0.10
+    final_bill = total - discount
 
-    for ch in password:
-        if ch.isupper():
-            upper += 1
-        elif ch.islower():
-            lower += 1
-        elif ch.isdigit():
-            digit += 1
-        else:
-            special += 1
+    return final_bill
 
-    if upper >= 1 and lower >= 1 and digit >= 1 and special >= 1:
-        print("Valid Password")
-    else:
-        print("Invalid Password")
-else:
-    print("Password must be at least 8 characters long")
+
+prices = [100, 200, 300]
+quantities = [2, 1, 3]
+
+print("Total Bill after discount =", calculate_bill(prices, quantities))

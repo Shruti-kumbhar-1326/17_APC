@@ -1,14 +1,14 @@
-# Program to find the shortest word in a sentence
+#13.	Write a function that accepts a list of numbers and returns their average.
+def calculate_average(numbers):
+    total = 0
 
-sentence = input("Enter a sentence: ")
+    for num in numbers:
+        total += num
 
-words = sentence.split()
+    average = total / len(numbers)
+    return average
 
-shortest = words[0]
 
-for word in words:
-    if len(word) < len(shortest):
-        shortest = word
+numbers = [10, 20, 30, 40, 50]
 
-print("Shortest word:", shortest)
-print("Length:", len(shortest))
+print("Average =", calculate_average(numbers))

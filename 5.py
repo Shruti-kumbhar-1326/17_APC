@@ -1,15 +1,16 @@
-# Program to count uppercase and lowercase letters
+def is_prime(n):
+    if n <= 1:
+        return False
 
-string = input("Enter a string: ")
+    for i in range(2, n):
+        if n % i == 0:
+            return False
 
-uppercase = 0
-lowercase = 0
+    return True
 
-for ch in string:
-    if ch.isupper():
-        uppercase += 1
-    elif ch.islower():
-        lowercase += 1
 
-print("Uppercase letters:", uppercase)
-print("Lowercase letters:", lowercase)
+n = int(input("Enter a number: "))
+
+result = is_prime(n)
+
+print(result)

@@ -1,24 +1,67 @@
-#second most freqent character 
-string = input("Enter a string: ")
+#25.	Create functions to add books, issue books, return books, search books, and display available books. Maintain book availability using dictionaries
+books = {
+    "Python": True,
+    "Java": True,
+    "C++": True
+}
 
-max1 = 0
-max2 = 0
-char1 = ""
-char2 = ""
 
-for ch in string:
-    count = string.count(ch)
+def add_book(book_name):
+    if book_name not in books:
+        books[book_name] = True
+        print("Book added successfully.")
+    else:
+        print("Book already exists.")
 
-    if count > max1:
-        max2 = max1
-        char2 = char1
 
-        max1 = count
-        char1 = ch
+def issue_book(book_name):
+    if book_name in books:
+        if books[book_name]:
+            books[book_name] = False
+            print("Book issued successfully.")
+        else:
+            print("Book is already issued.")
+    else:
+        print("Book not found.")
 
-    elif count > max2 and ch != char1:
-        max2 = count
-        char2 = ch
 
-print("Second most frequent character:", char2)
-print("Frequency:", max2)
+def return_book(book_name):
+    if book_name in books:
+        if not books[book_name]:
+            books[book_name] = True
+            print("Book returned successfully.")
+        else:
+            print("Book was not issued.")
+    else:
+        print("Book not found.")
+
+
+def search_book(book_name):
+    if book_name in books:
+        if books[book_name]:
+            print("Book found - Available")
+        else:
+            print("Book found - Not Available")
+    else:
+        print("Book not found.")
+
+
+def display_available_books():
+    print("\nAvailable Books:")
+
+    for book, available in books.items():
+        if available:
+            print(book)
+
+
+# Main program
+add_book("HTML")
+
+issue_book("Python")
+
+search_book("Python")
+search_book("Java")
+
+return_book("Python")
+
+display_available_books()

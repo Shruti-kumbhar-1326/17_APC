@@ -1,11 +1,16 @@
-str1 = input("Enter first string: ")
-str2 = input("Enter second string: ")
+#17.	Write a function that accepts n and returns the first n Fibonacci numbers
+def fibonacci(n):
+    result = []
+    a = 0
+    b = 1
 
-# Convert to lowercase
-str1 = str1.lower()
-str2 = str2.lower()
+    for i in range(n):
+        result.append(a)
+        a, b = b, a + b
 
-if sorted(str1) == sorted(str2):
-    print("The strings are Anagrams.")
-else:
-    print("The strings are Not Anagrams.")
+    return result
+
+
+n = int(input("Enter n: "))
+
+print("First", n, "Fibonacci numbers =", fibonacci(n))

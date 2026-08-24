@@ -1,13 +1,14 @@
-#30.	String Rotation 
-#	Check whether one string is a rotation of another. 
-#	Example:
-#	ABCD
-#	CDAB
-#Output: Yes
-str1 = input("Enter first string: ")
-str2 = input("Enter second string: ")
+#30.	Convert a decimal number into binary using recursion without using Python's built-in conversion functions.
+def decimal_to_binary(n):
+    if n == 0:
+        return ""
 
-if len(str1) == len(str2) and str2 in (str1 + str1):
-    print("Yes, the second string is a rotation of the first string.")
+    return decimal_to_binary(n // 2) + str(n % 2)
+
+
+n = int(input("Enter a decimal number: "))
+
+if n == 0:
+    print("Binary = 0")
 else:
-    print("No, the second string is not a rotation of the first string.")
+    print("Binary =", decimal_to_binary(n))

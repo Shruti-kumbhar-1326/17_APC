@@ -1,12 +1,8 @@
-# Program to find the frequency of a character
+#8.	Create a function power(base, exponent) to calculate the value of base raised to exponent.
+def power(base, exponent):
+    return base ** exponent
 
-string = input("Enter a string: ")
-ch = input("Enter the character to find: ")
+base = int(input("Enter base: "))
+exponent = int(input("Enter exponent: "))
 
-count = 0
-
-for i in string:
-    if i == ch:
-        count += 1
-
-print("Frequency of", ch, "is:", count)
+print("Result =", power(base, exponent))

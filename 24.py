@@ -1,14 +1,45 @@
-#most freqent character 
-string = input("Enter a string: ")
+#24.	Create functions for deposit, withdrawal, balance enquiry, and transaction history. Prevent withdrawal when the balance is insufficient and maintain a transaction record.
+balance = 0
+transactions = []
 
-max_count = 0
-max_char = ""
 
-for ch in string:
-    count = string.count(ch)
-    if count > max_count:
-        max_count = count
-        max_char = ch
+def deposit(amount):
+    global balance
+    balance += amount
+    transactions.append("Deposited ₹" + str(amount))
+    print("Amount deposited successfully.")
 
-print("Most frequent character:", max_char)
-print("Frequency:", max_count)
+
+def withdrawal(amount):
+    global balance
+
+    if amount <= balance:
+        balance -= amount
+        transactions.append("Withdrawn ₹" + str(amount))
+        print("Amount withdrawn successfully.")
+    else:
+        print("Insufficient balance.")
+
+
+def balance_enquiry():
+    print("Current Balance = ₹", balance)
+
+
+def transaction_history():
+    print("\nTransaction History:")
+
+    if len(transactions) == 0:
+        print("No transactions found.")
+    else:
+        for transaction in transactions:
+            print(transaction)
+
+
+# Main program
+deposit(5000)
+withdrawal(1500)
+balance_enquiry()
+
+withdrawal(5000)
+
+transaction_history()

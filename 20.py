@@ -1,12 +1,12 @@
-#Count how many times a specific word appears in a sentence
-sentence = input("Enter a sentence: ")
-word = input("Enter the word to count: ")
+#20.	Write a function that accepts basic salary and calculates gross salary after adding HRA and DA.
+def gross_salary(basic_salary):
+    hra = basic_salary * 0.20   # 20% HRA
+    da = basic_salary * 0.10    # 10% DA
 
-words = sentence.split()
-count = 0
+    gross = basic_salary + hra + da
+    return gross
 
-for w in words:
-    if w == word:
-        count += 1
 
-print("Occurrences of", word, "=", count)
+basic = float(input("Enter basic salary: "))
+
+print("Gross Salary =", gross_salary(basic))

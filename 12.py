@@ -1,14 +1,16 @@
-# Program to find the longest word in a sentence
+#12.	Create a function that checks whether a given string or number is a palindrome
+def is_palindrome(value):
+    value = str(value)
+    
+    if value == value[::-1]:
+        return True
+    else:
+        return False
 
-sentence = input("Enter a sentence: ")
 
-words = sentence.split()
+value = input("Enter a string or number: ")
 
-longest = words[0]
-
-for word in words:
-    if len(word) > len(longest):
-        longest = word
-
-print("Longest word:", longest)
-print("Length:", len(longest))
+if is_palindrome(value):
+    print("Palindrome")
+else:
+    print("Not a Palindrome")

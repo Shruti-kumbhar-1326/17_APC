@@ -1,11 +1,6 @@
-# Program to remove all spaces from a string
+#7.	Write a function that accepts n and returns the sum of the first n natural numbers.
+def sum_natural(n):
+    return n * (n + 1) // 2
 
-string = input("Enter a string: ")
-
-result = ""
-
-for ch in string:
-    if ch != " ":
-        result += ch
-
-print("String without spaces:", result)
+n = int(input("Enter n: "))
+print("Sum of first", n, "natural numbers =", sum_natural(n))

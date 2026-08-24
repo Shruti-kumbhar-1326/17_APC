@@ -1,11 +1,7 @@
-# Program to count the number of words using ASCII value
+#11.	Write a function that accepts a string and returns its reverse
+def reverse_string(string):
+    return string[::-1]
 
-string = input("Enter a sentence: ")
+string = input("Enter a string: ")
 
-count = 1
-
-for ch in string:
-    if ord(ch) == 32:      # ASCII value of space is 32
-        count += 1
-
-print("Total number of words:", count)
+print("Reverse =", reverse_string(string))

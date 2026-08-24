@@ -1,6 +1,14 @@
-# Program to print the first and last character of a string
+#9.	Write a function that accepts a list of numbers and returns the largest element without using the built-in max() function.
+def find_largest(numbers):
+    largest = numbers[0]
 
-string = input("Enter a string: ")
+    for num in numbers:
+        if num > largest:
+            largest = num
 
-print("First character:", string[0])
-print("Last character:", string[-1])
+    return largest
+
+
+numbers = [10, 25, 7, 45, 18]
+
+print("Largest element =", find_largest(numbers))

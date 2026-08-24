@@ -1,10 +1,13 @@
-# Program to reverse a string without using built-in reverse functions
+def greater_number(a, b):
+    if a > b:
+        return a
+    else:
+        return b
 
-string = input("Enter a string: ")
 
-reverse = ""
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
 
-for ch in string:
-    reverse = ch + reverse
+result = greater_number(num1, num2)
 
-print("Reversed string:", reverse)
+print("Greater number is:", result)

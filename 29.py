@@ -1,15 +1,24 @@
-#29.	Sentence Reversal 
-#	Reverse the order of words in a sentence without changing the words themselves. 
-#	Example:
-#	Input: Python is easy
-#Output: easy is Python
-sentence = input("Enter a sentence: ")
+#29.	Write a recursive function to search for an element in a sorted list using binary search.
+def binary_search(arr, low, high, key):
+    if low > high:
+        return -1
 
-words = sentence.split()
+    mid = (low + high) // 2
 
-reverse_sentence = ""
+    if arr[mid] == key:
+        return mid
+    elif key < arr[mid]:
+        return binary_search(arr, low, mid - 1, key)
+    else:
+        return binary_search(arr, mid + 1, high, key)
 
-for i in range(len(words)-1, -1, -1):
-    reverse_sentence += words[i] + " "
 
-print("Reversed Sentence:", reverse_sentence.strip())
+arr = [10, 20, 30, 40, 50, 60, 70]
+key = int(input("Enter element to search: "))
+
+result = binary_search(arr, 0, len(arr) - 1, key)
+
+if result != -1:
+    print("Element found at index", result)
+else:
+    print("Element not found")

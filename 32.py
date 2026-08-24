@@ -1,18 +1,32 @@
-# 32. Two sum using dictionary
+#32.	Create separate functions for addition, subtraction, multiplication, and division. Pass these functions as arguments to another function called calculate().
+def addition(a, b):
+    return a + b
 
-numbers = [2, 7, 11, 15, 3, 6]
-target = int(input("Enter target value: "))
 
-seen = {}
+def subtraction(a, b):
+    return a - b
 
-for num in numbers:
 
-    required = target - num
+def multiplication(a, b):
+    return a * b
 
-    if required in seen:
-        print("Two numbers are:", required, "and", num)
-        break
 
-    seen[num] = True
+def division(a, b):
+    return a / b
+
+
+def calculate(a, b, operation):
+    return operation(a, b)
+
+
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+
+print("Addition =", calculate(a, b, addition))
+print("Subtraction =", calculate(a, b, subtraction))
+print("Multiplication =", calculate(a, b, multiplication))
+
+if b != 0:
+    print("Division =", calculate(a, b, division))
 else:
-    print("No two numbers found")
+    print("Division is not possible by zero")

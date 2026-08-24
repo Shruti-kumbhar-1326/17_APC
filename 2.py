@@ -1,23 +1,10 @@
-# Program to count vowels, consonants, digits, spaces, and special characters
-
-string = input("Enter a string: ")
-
-vowels = consonants = digits = spaces = special = 0
-
-for ch in string:
-    if ch in "aeiouAEIOU":
-        vowels += 1
-    elif ch.isalpha():
-        consonants += 1
-    elif ch.isdigit():
-        digits += 1
-    elif ch == " ":
-        spaces += 1
+#2.	Write a function check_even_odd(n) that determines whether a given number is even or odd.
+def check_even_odd(n):
+    if n % 2 == 0:
+        return "even"
     else:
-        special += 1
-
-print("Vowels:", vowels)
-print("Consonants:", consonants)
-print("Digits:", digits)
-print("Spaces:", spaces)
-print("Special Characters:", special)
+        return"odd"
+n = int(input("enter a num:"))
+result = check_even_odd(n)
+print("the number is:",result)    
+    

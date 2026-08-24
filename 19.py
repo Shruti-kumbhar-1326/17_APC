@@ -1,8 +1,15 @@
-#substring search
-main_string = input("Enter the main string: ")
-substring = input("Enter the substring: ")
+#19.	Write a function that accepts the number of units consumed and calculates the electricity bill according to predefined slabs.
+def electricity_bill(units):
+    if units <= 100:
+        bill = units * 5
+    elif units <= 200:
+        bill = (100 * 5) + ((units - 100) * 7)
+    else:
+        bill = (100 * 5) + (100 * 7) + ((units - 200) * 10)
 
-if substring in main_string:
-    print("Substring found.")
-else:
-    print("Substring not found.")
+    return bill
+
+
+units = int(input("Enter units consumed: "))
+
+print("Electricity Bill = ₹", electricity_bill(units))

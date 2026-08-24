@@ -1,21 +1,14 @@
-# Program to print duplicate characters in a string
+#15.	Write a function that accepts a list and returns a new list containing only unique elements.
+def unique_elements(my_list):
+    unique = []
 
-string = input("Enter a string: ")
+    for item in my_list:
+        if item not in unique:
+            unique.append(item)
 
-print("Duplicate characters are:")
+    return unique
 
-for i in range(len(string)):
-    count = 0
-    for j in range(len(string)):
-        if string[i] == string[j]:
-            count += 1
 
-    if count > 1:
-        printed = False
-        for k in range(i):
-            if string[i] == string[k]:
-                printed = True
-                break
+my_list = [10, 20, 10, 30, 20, 40, 30]
 
-        if not printed:
-            print(string[i])
+print("Unique elements =", unique_elements(my_list))

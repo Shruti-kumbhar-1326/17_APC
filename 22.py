@@ -1,10 +1,28 @@
-string = input("Enter a string: ")
+#22.	Write a function that accepts a list of numbers and returns the minimum, maximum, sum, and average.
+def calculate_values(numbers):
+    minimum = numbers[0]
+    maximum = numbers[0]
+    total = 0
 
-count = 1
+    for num in numbers:
+        if num < minimum:
+            minimum = num
 
-for i in range(len(string)):
-    if i < len(string) - 1 and string[i] == string[i + 1]:
-        count += 1
-    else:
-        print(string[i] + str(count), end="")
-        count = 1
+        if num > maximum:
+            maximum = num
+
+        total += num
+
+    average = total / len(numbers)
+
+    return minimum, maximum, total, average
+
+
+numbers = [10, 25, 5, 40, 20]
+
+minimum, maximum, total, average = calculate_values(numbers)
+
+print("Minimum =", minimum)
+print("Maximum =", maximum)
+print("Sum =", total)
+print("Average =", average)
