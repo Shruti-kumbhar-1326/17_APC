@@ -1,12 +1,43 @@
-#20.	Write a function that accepts basic salary and calculates gross salary after adding HRA and DA.
-def gross_salary(basic_salary):
-    hra = basic_salary * 0.20   # 20% HRA
-    da = basic_salary * 0.10    # 10% DA
+# Open the file in read mode
+file = open("transactions.txt", "r")
 
-    gross = basic_salary + hra + da
-    return gross
+# Read all records
+records = file.readlines()
 
+# Close the file
+file.close()
 
-basic = float(input("Enter basic salary: "))
+# Initialize variables
+total_deposits = 0
+total_withdrawals = 0
+largest_transaction = 0
+largest_type = ""
 
-print("Gross Salary =", gross_salary(basic))
+# Process each transaction
+for record in records[1:]:
+    transaction_type, amount = record.strip().split(",")
+
+    amount = float(amount)
+
+    # Calculate deposits
+    if transaction_type.lower() == "deposit":
+        total_deposits += amount
+
+    # Calculate withdrawals
+    elif transaction_type.lower() == "withdrawal":
+        total_withdrawals += amount
+
+    # Find largest transaction
+    if amount > largest_transaction:
+        largest_transaction = amount
+        largest_type = transaction_type
+
+# Calculate final balance
+final_balance = total_deposits - total_withdrawals
+
+# Display results
+print("Total Deposits:", total_deposits)
+print("Total Withdrawals:", total_withdrawals)
+print("Final Balance:", final_balance)
+print("Largest Transaction:", largest_transaction)
+print("Transaction Type:", largest_type)

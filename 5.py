@@ -1,16 +1,7 @@
-def is_prime(n):
-    if n <= 1:
-        return False
-
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-
-    return True
-
-
-n = int(input("Enter a number: "))
-
-result = is_prime(n)
-
-print(result)
+#5.	Write a program to count and display the total number of lines present in a text file.
+file = open("student.txt","r")
+count = 0
+for line in file:
+    count += 1
+file.close
+print("Total number of lines:",count)

@@ -1,14 +1,14 @@
-#9.	Write a function that accepts a list of numbers and returns the largest element without using the built-in max() function.
-def find_largest(numbers):
-    largest = numbers[0]
-
-    for num in numbers:
-        if num > largest:
-            largest = num
-
-    return largest
-
-
-numbers = [10, 25, 7, 45, 18]
-
-print("Largest element =", find_largest(numbers))
+#9.	Read a text file and count the number of vowels and consonants present in the file.
+file = open("student.txt","r")
+content = file.read()
+vowels = 0
+consonants = 0
+for ch in content:
+    if ch.isalpha():
+        if ch.lower() in "aeiou":
+            vowels += 1
+        else:
+            consonants += 1
+file.close()
+print("Total vowels:",vowels)
+print("Total consonants:",consonants)

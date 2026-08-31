@@ -1,8 +1,6 @@
-#8.	Create a function power(base, exponent) to calculate the value of base raised to exponent.
-def power(base, exponent):
-    return base ** exponent
-
-base = int(input("Enter base: "))
-exponent = int(input("Enter exponent: "))
-
-print("Result =", power(base, exponent))
+#8.	Write a program to read a text file and display its lines in reverse order
+file = open("student.txt","r")
+lines = file.readlines()
+file.close()
+for line in reversed(lines):
+    print(line,end="")

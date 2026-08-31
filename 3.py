@@ -1,13 +1,7 @@
-def greater_number(a, b):
-    if a > b:
-        return a
-    else:
-        return b
-
-
-num1 = int(input("Enter first number: "))
-num2 = int(input("Enter second number: "))
-
-result = greater_number(num1, num2)
-
-print("Greater number is:", result)
+#3.	Write a program to append additional student information to an existing file without deleting its previous contents
+file = open("student.txt","a")
+file.write("\nAdditional Information:\n")
+file.write("Age: 20\n")
+file.write("City: Kolhapur\n")
+file.close()
+print("Additional student information added successfully!")

@@ -1,14 +1,22 @@
-#15.	Write a function that accepts a list and returns a new list containing only unique elements.
-def unique_elements(my_list):
-    unique = []
+#15.	Read a Python source file and create another file after removing single-line comments
+# Open the Python source file in read mode
+file = open("14.py", "r")
 
-    for item in my_list:
-        if item not in unique:
-            unique.append(item)
+# Create a new file for the modified code
+new_file = open("without_comments.py", "w")
 
-    return unique
+# Read the file line by line
+for line in file:
+    # Remove single-line comments
+    if "#" in line:
+        line = line.split("#")[0]
 
+    # Write the remaining code
+    new_file.write(line)
 
-my_list = [10, 20, 10, 30, 20, 40, 30]
+# Close both files
+file.close()
+new_file.close()
 
-print("Unique elements =", unique_elements(my_list))
+print("Single-line comments removed successfully.")
+print("New file created: without_comments.py")

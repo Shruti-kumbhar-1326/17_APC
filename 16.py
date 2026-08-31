@@ -1,18 +1,23 @@
-#16.	Create a function to find the second-largest number in a list.
-def second_largest(numbers):
-    largest = numbers[0]
-    second = None
+#16.	Read a text file and create another file containing the same text in uppercase.
+# Open the original file in read mode
+file = open("student.txt", "r")
 
-    for num in numbers:
-        if num > largest:
-            second = largest
-            largest = num
-        elif num != largest and (second is None or num > second):
-            second = num
+# Read the complete content
+content = file.read()
 
-    return second
+# Close the original file
+file.close()
 
+# Convert content to uppercase
+content = content.upper()
 
-numbers = [10, 25, 7, 45, 18]
+# Create a new file and write the uppercase content
+new_file = open("uppercase_student.txt", "w")
 
-print("Second largest =", second_largest(numbers))
+new_file.write(content)
+
+# Close the new file
+new_file.close()
+
+print("File converted to uppercase successfully.")
+print("New file created: uppercase_student.txt")

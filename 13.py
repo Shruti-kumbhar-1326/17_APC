@@ -1,14 +1,30 @@
-#13.	Write a function that accepts a list of numbers and returns their average.
-def calculate_average(numbers):
-    total = 0
+#13.	Accept a word from the user and search for it in a text file. Display the number of occurrences and the line numbers where it appears.
+# Accept a word from the user
+search_word = input("Enter a word to search: ")
 
-    for num in numbers:
-        total += num
+# Open the file in read mode
+file = open("student.txt", "r")
 
-    average = total / len(numbers)
-    return average
+count = 0
+line_numbers = []
 
+# Read the file line by line
+for line_number, line in enumerate(file, start=1):
+    words = line.split()
 
-numbers = [10, 20, 30, 40, 50]
+    for word in words:
+        if word.lower() == search_word.lower():
+            count += 1
+            if line_number not in line_numbers:
+                line_numbers.append(line_number)
 
-print("Average =", calculate_average(numbers))
+# Close the file
+file.close()
+
+# Display the result
+print("Number of occurrences:", count)
+
+if count > 0:
+    print("Word found on line(s):", line_numbers)
+else:
+    print("Word not found in the file.")

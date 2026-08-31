@@ -1,28 +1,23 @@
-#22.	Write a function that accepts a list of numbers and returns the minimum, maximum, sum, and average.
-def calculate_values(numbers):
-    minimum = numbers[0]
-    maximum = numbers[0]
-    total = 0
+# Open the first file in read mode
+file1 = open("file1.txt", "r")
+content1 = file1.read()
+file1.close()
 
-    for num in numbers:
-        if num < minimum:
-            minimum = num
+# Open the second file in read mode
+file2 = open("file2.txt", "r")
+content2 = file2.read()
+file2.close()
 
-        if num > maximum:
-            maximum = num
+# Create the third file
+file3 = open("file3.txt", "w")
 
-        total += num
+# Write contents of both files
+file3.write(content1)
+file3.write("\n")
+file3.write(content2)
 
-    average = total / len(numbers)
+# Close the third file
+file3.close()
 
-    return minimum, maximum, total, average
-
-
-numbers = [10, 25, 5, 40, 20]
-
-minimum, maximum, total, average = calculate_values(numbers)
-
-print("Minimum =", minimum)
-print("Maximum =", maximum)
-print("Sum =", total)
-print("Average =", average)
+print("Contents of both files merged successfully.")
+print("New file created: file3.txt")
