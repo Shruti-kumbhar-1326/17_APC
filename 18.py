@@ -1,74 +1,52 @@
-# Function to read employee records
-def read_employees():
-    file = open("employees.txt", "r")
-    records = file.readlines()
-    file.close()
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-    employees = []
-
-    # Skip header
-    for record in records[1:]:
-        emp_id, name, department, salary = record.strip().split(",")
-
-        employee = {
-            "id": emp_id,
-            "name": name,
-            "department": department,
-            "salary": float(salary)
-        }
-
-        employees.append(employee)
-
-    return employees
+    def display_person(self):
+        print("Name =", self.name)
+        print("Age =", self.age)
 
 
-# Function to display all employees
-def display_employees(employees):
-    print("\nAll Employees:")
-    for emp in employees:
-        print(emp["id"], emp["name"], emp["department"], emp["salary"])
+class Doctor(Person):
+    def __init__(self, name, age, specialization):
+        super().__init__(name, age)
+        self.specialization = specialization
+
+    def display_doctor(self):
+        print("Specialization =", self.specialization)
 
 
-# Function to find highest-paid employee
-def highest_paid(employees):
-    highest = max(employees, key=lambda emp: emp["salary"])
+class Patient(Person):
+    def __init__(self, name, age, disease):
+        super().__init__(name, age)
+        self.disease = disease
 
-    print("\nHighest-Paid Employee:")
-    print("ID:", highest["id"])
-    print("Name:", highest["name"])
-    print("Department:", highest["department"])
-    print("Salary:", highest["salary"])
+    def display_patient(self):
+        print("Disease =", self.disease)
 
 
-# Function to calculate average salary
-def average_salary(employees):
-    total = 0
-
-    for emp in employees:
-        total += emp["salary"]
-
-    average = total / len(employees)
-
-    print("\nAverage Salary:", average)
+class Surgeon(Doctor):
+    def surgery(self):
+        print("Surgeon performs surgery")
 
 
-# Function to display employees above given salary
-def above_salary(employees, salary):
-    print("\nEmployees earning above", salary, ":")
-
-    for emp in employees:
-        if emp["salary"] > salary:
-            print(emp["name"], "-", emp["salary"])
+class MedicalResearcher(Doctor, Patient):
+    def research(self):
+        print("Medical researcher performs research")
 
 
-# Main program
-employees = read_employees()
+# Create objects
+s = Surgeon("Dr. Rahul", 40, "General Surgery")
 
-display_employees(employees)
+m = MedicalResearcher("Dr. Amit", 35, "Medical Research")
 
-highest_paid(employees)
 
-average_salary(employees)
+print("Surgeon Details:")
+s.display_person()
+s.display_doctor()
+s.surgery()
 
-salary = float(input("\nEnter salary limit: "))
-above_salary(employees, salary)
+print("\nMedical Researcher Details:")
+m.display_person()
+m.research()

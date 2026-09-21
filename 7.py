@@ -1,14 +1,32 @@
-#7.	Write a program to count the total number of characters in a text file, including spaces.
-# Open the file in read mode
-file = open("student.txt", "r")
+class Shape:
+    def display(self):
+        print("Shape")
 
-# Read the complete file
-content = file.read()
 
-# Count total characters including spaces
-count = len(content)
+class Circle(Shape):
+    def area(self, radius):
+        return 3.14 * radius * radius
 
-# Close the file
-file.close()
 
-print("Total number of characters:", count)
+class Rectangle(Shape):
+    def area(self, length, breadth):
+        return length * breadth
+
+
+class Triangle(Shape):
+    def area(self, base, height):
+        return 0.5 * base * height
+
+
+c = Circle()
+r = Rectangle()
+t = Triangle()
+
+c.display()
+print("Circle Area =", c.area(5))
+
+r.display()
+print("Rectangle Area =", r.area(10, 5))
+
+t.display()
+print("Triangle Area =", t.area(10, 6))

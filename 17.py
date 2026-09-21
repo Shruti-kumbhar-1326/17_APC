@@ -1,54 +1,36 @@
-# Open the file in read mode
-file = open("students.txt", "r")
+class Animal:
+    def __init__(self, name):
+        self.name = name
 
-# Read all records
-records = file.readlines()
+    def eat(self):
+        print(self.name, "is eating")
 
-# Close the file
-file.close()
 
-# Remove the header
-records = records[1:]
+class Dog(Animal):
+    def sound(self):
+        print(self.name, "says Woof")
 
-# Variables
-total_marks = 0
-highest_marks = -1
-highest_student = ""
 
-print("All Student Records:")
-print("--------------------")
+class Cat(Animal):
+    def sound(self):
+        print(self.name, "says Meow")
 
-# Process each record
-for record in records:
-    roll_no, name, marks = record.strip().split(",")
 
-    marks = int(marks)
+class Cow(Animal):
+    def sound(self):
+        print(self.name, "says Moo")
 
-    # Display record
-    print("Roll No:", roll_no, "Name:", name, "Marks:", marks)
 
-    # Calculate total marks
-    total_marks += marks
+# Create objects
+d = Dog("Tommy")
+c = Cat("Kitty")
+w = Cow("Gauri")
 
-    # Find highest marks
-    if marks > highest_marks:
-        highest_marks = marks
-        highest_student = name
+d.eat()
+d.sound()
 
-# Calculate average
-average = total_marks / len(records)
+c.eat()
+c.sound()
 
-print("\nStudent with Highest Marks:")
-print("Name:", highest_student)
-print("Marks:", highest_marks)
-
-print("\nAverage Marks:", average)
-
-# Display students scoring more than 80
-print("\nStudents who scored more than 80:")
-for record in records:
-    roll_no, name, marks = record.strip().split(",")
-    marks = int(marks)
-
-    if marks > 80:
-        print(name, "-", marks)
+w.eat()
+w.sound()

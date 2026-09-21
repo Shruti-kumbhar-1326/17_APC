@@ -1,23 +1,40 @@
-#16.	Read a text file and create another file containing the same text in uppercase.
-# Open the original file in read mode
-file = open("student.txt", "r")
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-# Read the complete content
-content = file.read()
 
-# Close the original file
-file.close()
+class Student(Person):
+    def __init__(self, name, age, roll_no, course):
+        super().__init__(name, age)
+        self.roll_no = roll_no
+        self.course = course
 
-# Convert content to uppercase
-content = content.upper()
 
-# Create a new file and write the uppercase content
-new_file = open("uppercase_student.txt", "w")
+class ResearchStudent(Student):
+    def __init__(self, name, age, roll_no, course, topic, guide):
+        super().__init__(name, age, roll_no, course)
+        self.topic = topic
+        self.guide = guide
 
-new_file.write(content)
+    def display(self):
+        print("Name =", self.name)
+        print("Age =", self.age)
+        print("Roll No =", self.roll_no)
+        print("Course =", self.course)
+        print("Research Topic =", self.topic)
+        print("Guide Name =", self.guide)
 
-# Close the new file
-new_file.close()
 
-print("File converted to uppercase successfully.")
-print("New file created: uppercase_student.txt")
+# Create object
+r = ResearchStudent(
+    "Rahul",
+    21,
+    101,
+    "M.Tech",
+    "Artificial Intelligence",
+    "Dr. Sharma"
+)
+
+# Display details
+r.display()

@@ -1,8 +1,29 @@
-#1.	Write a Python program to create a file named student.txt and write the student's name, roll number, branch, and semester into the file.
-file = open("student.txt","w")
-file.write("Name: Shruti\n")
-file.write("Roll No: 17\n")
-file.write("Branch: Computer Science and Engineering\n")
-file.write("Semister: 5\n")
-file.close()
-print("Studdent details written sucessfully.")
+class Employee:
+    def __init__(self, emp_id, name, salary):
+        self.emp_id = emp_id
+        self.name = name
+        self.salary = salary
+
+    def display(self):
+        print("Employee ID =", self.emp_id)
+        print("Name =", self.name)
+        print("Salary =", self.salary)
+
+
+class Manager(Employee):
+    def __init__(self, emp_id, name, salary, department):
+        super().__init__(emp_id, name, salary)
+        self.department = department
+
+    def annual_salary(self):
+        return self.salary * 12
+
+    def display(self):
+        super().display()
+        print("Department =", self.department)
+        print("Annual Salary =", self.annual_salary())
+
+
+m = Manager(101, "Rahul", 50000, "IT")
+
+m.display()

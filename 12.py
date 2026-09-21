@@ -1,30 +1,28 @@
-#12.	Read a text file and count how many times each word occurs. Display the result using a dictionary
-# Open the file in read mode
-file = open("student.txt", "r")
+class Product:
+    def __init__(self, product_id, name, price):
+        self.product_id = product_id
+        self.name = name
+        self.price = price
 
-# Read the complete file
-content = file.read()
 
-# Convert content into words
-words = content.split()
+class ElectronicProduct(Product):
+    def __init__(self, product_id, name, price, brand, warranty):
+        super().__init__(product_id, name, price)
+        self.brand = brand
+        self.warranty = warranty
 
-# Create an empty dictionary
-word_count = {}
+    def final_price(self):
+        return self.price - (self.price * 10 / 100)
 
-# Count each word
-for word in words:
-    word = word.lower()
+    def display(self):
+        print("Product ID =", self.product_id)
+        print("Name =", self.name)
+        print("Price =", self.price)
+        print("Brand =", self.brand)
+        print("Warranty =", self.warranty)
+        print("Final Price =", self.final_price())
 
-    if word in word_count:
-        word_count[word] += 1
-    else:
-        word_count[word] = 1
 
-# Close the file
-file.close()
+p = ElectronicProduct(101, "Laptop", 50000, "HP", "2 Years")
 
-# Display the result
-print("Word Frequency:")
-
-for word, count in word_count.items():
-    print(word, ":", count)
+p.display()

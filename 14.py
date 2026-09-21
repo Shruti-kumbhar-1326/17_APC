@@ -1,27 +1,21 @@
-#14.	Read a text file and replace all occurrences of a specified word with another word. Save the modified text in the same file or a new file.
-# Open the original file in read mode
-file = open("student.txt", "r")
+class Camera:
+    def take_photo(self):
+        print("Taking photograph...")
 
-# Read the complete content
-content = file.read()
 
-# Close the file
-file.close()
+class Phone:
+    def make_call(self):
+        print("Making a phone call...")
 
-# Accept words from the user
-old_word = input("Enter the word to replace: ")
-new_word = input("Enter the new word: ")
 
-# Replace all occurrences
-modified_content = content.replace(old_word, new_word)
+class Smartphone(Camera, Phone):
+    def use_smartphone(self):
+        print("Smartphone is ready")
 
-# Save the modified content in a new file
-new_file = open("modified_student.txt", "w")
 
-new_file.write(modified_content)
+# Create object
+s = Smartphone()
 
-# Close the new file
-new_file.close()
-
-print("Word replaced successfully.")
-print("Modified file saved as modified_student.txt")
+s.use_smartphone()
+s.take_photo()
+s.make_call()

@@ -1,7 +1,24 @@
-#3.	Write a program to append additional student information to an existing file without deleting its previous contents
-file = open("student.txt","a")
-file.write("\nAdditional Information:\n")
-file.write("Age: 20\n")
-file.write("City: Kolhapur\n")
-file.close()
-print("Additional student information added successfully!")
+class Academic:
+    def __init__(self, marks):
+        self.marks = marks
+
+
+class Sports:
+    def __init__(self, points):
+        self.points = points
+
+
+class Student(Academic, Sports):
+    def __init__(self, marks, points):
+        Academic.__init__(self, marks)
+        Sports.__init__(self, points)
+
+    def performance(self):
+        return self.marks + self.points
+
+
+s = Student(80, 15)
+
+print("Academic Marks =", s.marks)
+print("Sports Points =", s.points)
+print("Overall Performance =", s.performance())
