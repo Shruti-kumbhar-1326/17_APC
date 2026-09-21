@@ -1,57 +1,34 @@
-class ATM:
-    def __init__(self, account_no, name, balance):
-        self.account_no = account_no
-        self.name = name
-        self.balance = balance
+class Distance:
+    def __init__(self, feet, inches):
+        self.feet = feet
+        self.inches = inches
 
-    def check_balance(self):
-        print("Balance =", self.balance)
+    def __add__(self, other):
+        feet = self.feet + other.feet
+        inches = self.inches + other.inches
 
-    def deposit(self, amount):
-        self.balance = self.balance + amount
-        print("Money deposited successfully")
+        # Convert extra inches into feet
+        feet = feet + inches // 12
+        inches = inches % 12
 
-    def withdraw(self, amount):
-        if amount <= self.balance:
-            self.balance = self.balance - amount
-            print("Money withdrawn successfully")
-        else:
-            print("Insufficient balance")
+        return Distance(feet, inches)
 
-    def account_details(self):
-        print("Account No =", self.account_no)
-        print("Name =", self.name)
-        print("Balance =", self.balance)
+    def display(self):
+        print(self.feet, "feet", self.inches, "inches")
 
 
-a = ATM(101, "Rahul", 5000)
+# Create two objects
+d1 = Distance(5, 8)
+d2 = Distance(3, 7)
 
-while True:
-    print("\n1. Check Balance")
-    print("2. Deposit Money")
-    print("3. Withdraw Money")
-    print("4. Account Details")
-    print("5. Exit")
+# Add two distances
+d3 = d1 + d2
 
-    choice = int(input("Enter your choice: "))
+print("First Distance:")
+d1.display()
 
-    if choice == 1:
-        a.check_balance()
+print("Second Distance:")
+d2.display()
 
-    elif choice == 2:
-        amount = int(input("Enter amount: "))
-        a.deposit(amount)
-
-    elif choice == 3:
-        amount = int(input("Enter amount: "))
-        a.withdraw(amount)
-
-    elif choice == 4:
-        a.account_details()
-
-    elif choice == 5:
-        print("Thank You!")
-        break
-
-    else:
-        print("Invalid choice")
+print("Total Distance:")
+d3.display()

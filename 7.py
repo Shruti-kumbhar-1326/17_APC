@@ -1,21 +1,35 @@
-class MobilePhone:
-    def __init__(self, brand, model, storage, price):
-        self.brand = brand
-        self.model = model
-        self.storage = storage
-        self.price = price
-
-    def display(self):
-        print("Brand =", self.brand)
-        print("Model =", self.model)
-        print("Storage =", self.storage)
-        print("Price =", self.price)
-
-    def discount(self):
-        return self.price - (self.price * 10 / 100)
+class BankAccount:
+    def calculate_interest(self, balance):
+        print("Interest calculation")
 
 
-m = MobilePhone("Samsung", "A15", "128GB", 20000)
+class SavingsAccount(BankAccount):
+    def calculate_interest(self, balance):
+        interest = balance * 4 / 100
+        print("Savings Account Interest =", interest)
 
-m.display()
-print("Price after discount =", m.discount())
+
+class CurrentAccount(BankAccount):
+    def calculate_interest(self, balance):
+        interest = balance * 2 / 100
+        print("Current Account Interest =", interest)
+
+
+class FixedDepositAccount(BankAccount):
+    def calculate_interest(self, balance):
+        interest = balance * 7 / 100
+        print("Fixed Deposit Interest =", interest)
+
+
+# Create objects
+accounts = [
+    SavingsAccount(),
+    CurrentAccount(),
+    FixedDepositAccount()
+]
+
+balance = 100000
+
+# Runtime Polymorphism
+for account in accounts:
+    account.calculate_interest(balance)

@@ -1,29 +1,22 @@
-class Vehicle:
-    def __init__(self, number, model, rate):
-        self.number = number
-        self.model = model
-        self.rate = rate
-        self.available = True
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
 
-    def rent(self):
-        if self.available:
-            self.available = False
-            print("Vehicle rented")
-        else:
-            print("Vehicle not available")
+    def __gt__(self, other):
+        return self.marks > other.marks
 
-    def return_vehicle(self):
-        self.available = True
-        print("Vehicle returned")
-
-    def charges(self, days):
-        return self.rate * days
+    def __lt__(self, other):
+        return self.marks < other.marks
 
 
-v = Vehicle("MH12AB1234", "Swift", 1000)
+# Create two students
+s1 = Student("Rahul", 450)
+s2 = Student("Amit", 400)
 
-v.rent()
+# Compare marks
+if s1 > s2:
+    print(s1.name, "has more marks than", s2.name)
 
-print("Rental Charges =", v.charges(3))
-
-v.return_vehicle()
+if s1 < s2:
+    print(s1.name, "has fewer marks than", s2.name)

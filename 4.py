@@ -1,15 +1,31 @@
-class Circle:
-    def __init__(self, radius):
-        self.radius = radius
-
-    def area(self):
-        return 3.14 * self.radius * self.radius
-
-    def circumference(self):
-        return 2 * 3.14 * self.radius
+class Animal:
+    def sound(self):
+        print("Animal makes a sound")
 
 
-c = Circle(5)
+class Dog(Animal):
+    def sound(self):
+        print("Dog says Woof")
 
-print("Area =", c.area())
-print("Circumference =", c.circumference())
+
+class Cat(Animal):
+    def sound(self):
+        print("Cat says Meow")
+
+
+class Cow(Animal):
+    def sound(self):
+        print("Cow says Moo")
+
+
+class Lion(Animal):
+    def sound(self):
+        print("Lion says Roar")
+
+
+# Create objects
+animals = [Dog(), Cat(), Cow(), Lion()]
+
+# Runtime Polymorphism
+for animal in animals:
+    animal.sound()

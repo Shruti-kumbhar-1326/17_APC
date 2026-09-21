@@ -1,35 +1,47 @@
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+class SmartDevice:
+    def turn_on(self):
+        print("Device is ON")
+
+    def turn_off(self):
+        print("Device is OFF")
 
 
-class Student(Person):
-    def __init__(self, name, age, roll_no, course):
-        super().__init__(name, age)
-        self.roll_no = roll_no
-        self.course = course
+class Light(SmartDevice):
+    def turn_on(self):
+        print("Light is ON")
+
+    def turn_off(self):
+        print("Light is OFF")
 
 
-class ResearchStudent(Student):
-    def __init__(self, name, age, roll_no, course, research_topic, guide):
-        super().__init__(name, age, roll_no, course)
-        self.research_topic = research_topic
-        self.guide = guide
+class Fan(SmartDevice):
+    def turn_on(self):
+        print("Fan is ON")
 
-    def display(self):
-        print("Name =", self.name)
-        print("Age =", self.age)
-        print("Roll No =", self.roll_no)
-        print("Course =", self.course)
-        print("Research Topic =", self.research_topic)
-        print("Guide Name =", self.guide)
+    def turn_off(self):
+        print("Fan is OFF")
 
 
-# Create object
-r = ResearchStudent(
-    "Rahul", 22, 101, "M.Tech",
-    "Artificial Intelligence", "Dr. Sharma"
-)
+class AC(SmartDevice):
+    def turn_on(self):
+        print("AC is ON")
 
-r.display()
+    def turn_off(self):
+        print("AC is OFF")
+
+
+class TV(SmartDevice):
+    def turn_on(self):
+        print("TV is ON")
+
+    def turn_off(self):
+        print("TV is OFF")
+
+
+# Create objects
+devices = [Light(), Fan(), AC(), TV()]
+
+# Call methods using loop
+for device in devices:
+    device.turn_on()
+    device.turn_off()

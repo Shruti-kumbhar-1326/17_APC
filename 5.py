@@ -1,17 +1,30 @@
-class Book:
-    def __init__(self, book_id, title, author, price):
-        self.book_id = book_id
-        self.title = title
-        self.author = author
-        self.price = price
-
-    def display(self):
-        print("Book ID =", self.book_id)
-        print("Title =", self.title)
-        print("Author =", self.author)
-        print("Price =", self.price)
+class Notification:
+    def send(self):
+        print("Sending notification")
 
 
-b = Book(101, "Python", "John", 500)
+class EmailNotification(Notification):
+    def send(self):
+        print("Sending notification through Email")
 
-b.display()
+
+class SMSNotification(Notification):
+    def send(self):
+        print("Sending notification through SMS")
+
+
+class PushNotification(Notification):
+    def send(self):
+        print("Sending notification through Push Notification")
+
+
+# Create objects
+notifications = [
+    EmailNotification(),
+    SMSNotification(),
+    PushNotification()
+]
+
+# Runtime Polymorphism
+for notification in notifications:
+    notification.send()

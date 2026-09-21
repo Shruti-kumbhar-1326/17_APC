@@ -1,27 +1,34 @@
-class FoodOrder:
-    def __init__(self, order_id, name, food, quantity, price):
-        self.order_id = order_id
-        self.name = name
-        self.food = food
-        self.quantity = quantity
-        self.price = price
-
-    def total_bill(self):
-        total = self.quantity * self.price
-        tax = total * 0.05
-        return total + tax
-
-    def __del__(self):
-        print("Order Completed")
+class Payment:
+    def make_payment(self, amount):
+        print("Making payment")
 
 
-o = FoodOrder(101, "Rahul", "Pizza", 2, 200)
+class UPIPayment(Payment):
+    def make_payment(self, amount):
+        print("Payment of Rs.", amount, "made using UPI")
 
-print("Order ID =", o.order_id)
-print("Customer =", o.name)
-print("Food =", o.food)
-print("Quantity =", o.quantity)
-print("Price =", o.price)
-print("Total Bill =", o.total_bill())
 
-del o
+class CardPayment(Payment):
+    def make_payment(self, amount):
+        print("Payment of Rs.", amount, "made using Card")
+
+
+class WalletPayment(Payment):
+    def make_payment(self, amount):
+        print("Payment of Rs.", amount, "made using Wallet")
+
+
+# Common function
+def process_payment(payment, amount):
+    payment.make_payment(amount)
+
+
+# Create objects
+upi = UPIPayment()
+card = CardPayment()
+wallet = WalletPayment()
+
+# Demonstrate polymorphism
+process_payment(upi, 1000)
+process_payment(card, 2000)
+process_payment(wallet, 1500)

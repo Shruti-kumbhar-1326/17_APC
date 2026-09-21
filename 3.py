@@ -1,16 +1,26 @@
-class Rectangle:
-    def __init__(self, length, breadth):
-        self.length = length
-        self.breadth = breadth
-
-    def area(self):
-        return self.length * self.breadth
-
-    def perimeter(self):
-        return 2 * (self.length + self.breadth)
+class Vehicle:
+    def start(self):
+        print("Vehicle is starting")
 
 
-r = Rectangle(10, 5)
+class Car(Vehicle):
+    def start(self):
+        print("Car starts with a key")
 
-print("Area =", r.area())
-print("Perimeter =", r.perimeter())
+
+class Bike(Vehicle):
+    def start(self):
+        print("Bike starts with a self-start button")
+
+
+class Bus(Vehicle):
+    def start(self):
+        print("Bus starts with a key")
+
+
+# Create objects
+vehicles = [Car(), Bike(), Bus()]
+
+# Runtime Polymorphism
+for vehicle in vehicles:
+    vehicle.start()

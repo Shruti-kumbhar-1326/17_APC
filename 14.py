@@ -1,21 +1,26 @@
-class Camera:
-    def take_photo(self):
-        print("Taking photograph...")
+class Media:
+    def play(self):
+        print("Playing media")
 
 
-class Phone:
-    def make_call(self):
-        print("Making a phone call...")
+class Audio(Media):
+    def play(self):
+        print("Playing Audio")
 
 
-class Smartphone(Camera, Phone):
-    def use_smartphone(self):
-        print("Smartphone is ready")
+class Video(Media):
+    def play(self):
+        print("Playing Video")
 
 
-# Create object
-s = Smartphone()
+class Podcast(Media):
+    def play(self):
+        print("Playing Podcast")
 
-s.use_smartphone()
-s.take_photo()
-s.make_call()
+
+# Create objects
+media_list = [Audio(), Video(), Podcast()]
+
+# Same method called for different objects
+for media in media_list:
+    media.play()

@@ -1,36 +1,26 @@
-class ShoppingCart:
-    def __init__(self, name, cart_id):
+class Product:
+    def __init__(self, name, price):
         self.name = name
-        self.cart_id = cart_id
-        self.products = []
+        self.price = price
 
-    def add_product(self, product, price):
-        self.products.append([product, price])
+    def __eq__(self, other):
+        return self.price == other.price
 
-    def remove_product(self, product):
-        for p in self.products:
-            if p[0] == product:
-                self.products.remove(p)
-
-    def total_bill(self):
-        total = 0
-        for p in self.products:
-            total = total + p[1]
-        return total
-
-    def __del__(self):
-        print("Shopping Cart Destroyed")
+    def __gt__(self, other):
+        return self.price > other.price
 
 
-c = ShoppingCart("Rahul", 101)
+# Create two products
+p1 = Product("Laptop", 50000)
+p2 = Product("Mobile", 30000)
 
-c.add_product("Mobile", 20000)
-c.add_product("Mouse", 500)
+# Compare products
+if p1 == p2:
+    print("Both products have the same price")
+else:
+    print("Products have different prices")
 
-c.remove_product("Mouse")
-
-print("Customer =", c.name)
-print("Cart ID =", c.cart_id)
-print("Total Bill =", c.total_bill())
-
-del c
+if p1 > p2:
+    print(p1.name, "is more expensive than", p2.name)
+else:
+    print(p2.name, "is more expensive than", p1.name)
