@@ -1,31 +1,23 @@
-class BankAccount:
-    def __init__(self, account_no, balance):
-        self.account_no = account_no
-        self.balance = balance
+class ElectricityBill:
+    def __init__(self, number, name, units):
+        self.number = number
+        self.name = name
+        self.units = units
+
+    def calculate_bill(self):
+        if self.units <= 100:
+            bill = self.units * 5
+        elif self.units <= 200:
+            bill = 100 * 5 + (self.units - 100) * 7
+        else:
+            bill = 100 * 5 + 100 * 7 + (self.units - 200) * 10
+
+        return bill
 
 
-class SavingsAccount(BankAccount):
-    def __init__(self, account_no, balance, rate):
-        super().__init__(account_no, balance)
-        self.rate = rate
+e = ElectricityBill(101, "Rahul", 250)
 
-    def interest(self):
-        return self.balance * self.rate / 100
-
-
-class PremiumSavingsAccount(SavingsAccount):
-    def __init__(self, account_no, balance, rate, benefits):
-        super().__init__(account_no, balance, rate)
-        self.benefits = benefits
-
-    def display(self):
-        print("Account No =", self.account_no)
-        print("Balance =", self.balance)
-        print("Interest Rate =", self.rate, "%")
-        print("Interest =", self.interest())
-        print("Benefits =", self.benefits)
-
-
-p = PremiumSavingsAccount(101, 50000, 6, "Free Insurance")
-
-p.display()
+print("Consumer Number =", e.number)
+print("Consumer Name =", e.name)
+print("Units =", e.units)
+print("Electricity Bill =", e.calculate_bill())

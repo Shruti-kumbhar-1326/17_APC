@@ -1,43 +1,36 @@
-class Student:
-    def __init__(self, roll_no, name, course):
-        self.roll_no = roll_no
+class ShoppingCart:
+    def __init__(self, name, cart_id):
         self.name = name
-        self.course = course
+        self.cart_id = cart_id
+        self.products = []
+
+    def add_product(self, product, price):
+        self.products.append([product, price])
+
+    def remove_product(self, product):
+        for p in self.products:
+            if p[0] == product:
+                self.products.remove(p)
+
+    def total_bill(self):
+        total = 0
+        for p in self.products:
+            total = total + p[1]
+        return total
+
+    def __del__(self):
+        print("Shopping Cart Destroyed")
 
 
-class Result(Student):
-    def __init__(self, roll_no, name, course, m1, m2, m3):
-        super().__init__(roll_no, name, course)
-        self.m1 = m1
-        self.m2 = m2
-        self.m3 = m3
+c = ShoppingCart("Rahul", 101)
 
-    def total(self):
-        return self.m1 + self.m2 + self.m3
+c.add_product("Mobile", 20000)
+c.add_product("Mouse", 500)
 
-    def percentage(self):
-        return self.total() / 3
+c.remove_product("Mouse")
 
-    def grade(self):
-        p = self.percentage()
+print("Customer =", c.name)
+print("Cart ID =", c.cart_id)
+print("Total Bill =", c.total_bill())
 
-        if p >= 90:
-            return "A"
-        elif p >= 75:
-            return "B"
-        elif p >= 60:
-            return "C"
-        elif p >= 40:
-            return "D"
-        else:
-            return "F"
-
-
-r = Result(101, "Rahul", "CSE", 80, 75, 90)
-
-print("Roll No =", r.roll_no)
-print("Name =", r.name)
-print("Course =", r.course)
-print("Total =", r.total())
-print("Percentage =", r.percentage())
-print("Grade =", r.grade())
+del c

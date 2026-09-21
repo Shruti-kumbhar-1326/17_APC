@@ -1,28 +1,27 @@
-class Product:
-    def __init__(self, product_id, name, price):
-        self.product_id = product_id
+class FoodOrder:
+    def __init__(self, order_id, name, food, quantity, price):
+        self.order_id = order_id
         self.name = name
+        self.food = food
+        self.quantity = quantity
         self.price = price
 
+    def total_bill(self):
+        total = self.quantity * self.price
+        tax = total * 0.05
+        return total + tax
 
-class ElectronicProduct(Product):
-    def __init__(self, product_id, name, price, brand, warranty):
-        super().__init__(product_id, name, price)
-        self.brand = brand
-        self.warranty = warranty
-
-    def final_price(self):
-        return self.price - (self.price * 10 / 100)
-
-    def display(self):
-        print("Product ID =", self.product_id)
-        print("Name =", self.name)
-        print("Price =", self.price)
-        print("Brand =", self.brand)
-        print("Warranty =", self.warranty)
-        print("Final Price =", self.final_price())
+    def __del__(self):
+        print("Order Completed")
 
 
-p = ElectronicProduct(101, "Laptop", 50000, "HP", "2 Years")
+o = FoodOrder(101, "Rahul", "Pizza", 2, 200)
 
-p.display()
+print("Order ID =", o.order_id)
+print("Customer =", o.name)
+print("Food =", o.food)
+print("Quantity =", o.quantity)
+print("Price =", o.price)
+print("Total Bill =", o.total_bill())
+
+del o

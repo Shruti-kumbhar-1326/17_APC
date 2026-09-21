@@ -1,20 +1,37 @@
-class Printer:
-    def print_document(self):
-        print("Printing document...")
+class StudentResult:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def total(self):
+        return sum(self.marks)
+
+    def percentage(self):
+        return self.total() / 5
+
+    def grade(self):
+        p = self.percentage()
+
+        if p >= 90:
+            return "A"
+        elif p >= 75:
+            return "B"
+        elif p >= 60:
+            return "C"
+        elif p >= 40:
+            return "D"
+        else:
+            return "F"
+
+    def __del__(self):
+        print("Student Result Object Destroyed")
 
 
-class Scanner:
-    def scan_document(self):
-        print("Scanning document...")
+s = StudentResult("Rahul", [80, 75, 90, 85, 70])
 
+print("Name =", s.name)
+print("Total =", s.total())
+print("Percentage =", s.percentage())
+print("Grade =", s.grade())
 
-class MultifunctionDevice(Printer, Scanner):
-    def multifunction(self):
-        print("Multifunction Device")
-
-
-# Create object
-m = MultifunctionDevice()
-
-m.print_document()
-m.scan_document()
+del s

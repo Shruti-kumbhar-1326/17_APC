@@ -1,24 +1,16 @@
-class Academic:
-    def __init__(self, marks):
-        self.marks = marks
+class Rectangle:
+    def __init__(self, length, breadth):
+        self.length = length
+        self.breadth = breadth
+
+    def area(self):
+        return self.length * self.breadth
+
+    def perimeter(self):
+        return 2 * (self.length + self.breadth)
 
 
-class Sports:
-    def __init__(self, points):
-        self.points = points
+r = Rectangle(10, 5)
 
-
-class Student(Academic, Sports):
-    def __init__(self, marks, points):
-        Academic.__init__(self, marks)
-        Sports.__init__(self, points)
-
-    def performance(self):
-        return self.marks + self.points
-
-
-s = Student(80, 15)
-
-print("Academic Marks =", s.marks)
-print("Sports Points =", s.points)
-print("Overall Performance =", s.performance())
+print("Area =", r.area())
+print("Perimeter =", r.perimeter())

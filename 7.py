@@ -1,32 +1,21 @@
-class Shape:
+class MobilePhone:
+    def __init__(self, brand, model, storage, price):
+        self.brand = brand
+        self.model = model
+        self.storage = storage
+        self.price = price
+
     def display(self):
-        print("Shape")
+        print("Brand =", self.brand)
+        print("Model =", self.model)
+        print("Storage =", self.storage)
+        print("Price =", self.price)
+
+    def discount(self):
+        return self.price - (self.price * 10 / 100)
 
 
-class Circle(Shape):
-    def area(self, radius):
-        return 3.14 * radius * radius
+m = MobilePhone("Samsung", "A15", "128GB", 20000)
 
-
-class Rectangle(Shape):
-    def area(self, length, breadth):
-        return length * breadth
-
-
-class Triangle(Shape):
-    def area(self, base, height):
-        return 0.5 * base * height
-
-
-c = Circle()
-r = Rectangle()
-t = Triangle()
-
-c.display()
-print("Circle Area =", c.area(5))
-
-r.display()
-print("Rectangle Area =", r.area(10, 5))
-
-t.display()
-print("Triangle Area =", t.area(10, 6))
+m.display()
+print("Price after discount =", m.discount())

@@ -1,29 +1,23 @@
-class Employee:
-    def __init__(self, emp_id, name, salary):
-        self.emp_id = emp_id
+class Patient:
+    def __init__(self, patient_id, name, age, disease, fee):
+        self.patient_id = patient_id
         self.name = name
-        self.salary = salary
+        self.age = age
+        self.disease = disease
+        self.fee = fee
+
+    def display(self):
+        print("Patient ID =", self.patient_id)
+        print("Name =", self.name)
+        print("Age =", self.age)
+        print("Disease =", self.disease)
+        print("Consultation Fee =", self.fee)
+
+    def total_bill(self):
+        return self.fee
 
 
-class Manager(Employee):
-    def total_salary(self):
-        return self.salary + self.salary * 0.30
+p = Patient(101, "Rahul", 20, "Fever", 500)
 
-
-class Developer(Employee):
-    def total_salary(self):
-        return self.salary + self.salary * 0.20
-
-
-class Tester(Employee):
-    def total_salary(self):
-        return self.salary + self.salary * 0.10
-
-
-m = Manager(101, "Rahul", 50000)
-d = Developer(102, "Amit", 40000)
-t = Tester(103, "Sneha", 30000)
-
-print("Manager Salary =", m.total_salary())
-print("Developer Salary =", d.total_salary())
-print("Tester Salary =", t.total_salary())
+p.display()
+print("Total Bill =", p.total_bill())

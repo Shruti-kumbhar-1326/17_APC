@@ -1,42 +1,29 @@
 class Vehicle:
-    def __init__(self, brand):
-        self.brand = brand
+    def __init__(self, number, model, rate):
+        self.number = number
+        self.model = model
+        self.rate = rate
+        self.available = True
 
-    def display(self):
-        print("Brand =", self.brand)
+    def rent(self):
+        if self.available:
+            self.available = False
+            print("Vehicle rented")
+        else:
+            print("Vehicle not available")
 
+    def return_vehicle(self):
+        self.available = True
+        print("Vehicle returned")
 
-class Car(Vehicle):
-    def __init__(self, brand, price):
-        super().__init__(brand)
-        self.price = price
-
-
-class Bike(Vehicle):
-    def __init__(self, brand, mileage):
-        super().__init__(brand)
-        self.mileage = mileage
-
-
-class SportsCar(Car):
-    def speed(self):
-        print("Sports Car Speed = 250 km/h")
+    def charges(self, days):
+        return self.rate * days
 
 
-class ElectricBike(Bike):
-    def battery(self):
-        print("Battery = 5 kWh")
+v = Vehicle("MH12AB1234", "Swift", 1000)
 
+v.rent()
 
-s = SportsCar("BMW", 5000000)
-e = ElectricBike("Ola", 120)
+print("Rental Charges =", v.charges(3))
 
-s.display()
-print("Price =", s.price)
-s.speed()
-
-print()
-
-e.display()
-print("Mileage =", e.mileage)
-e.battery()
+v.return_vehicle()

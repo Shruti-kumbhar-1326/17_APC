@@ -1,29 +1,26 @@
-class Employee:
-    def __init__(self, emp_id, name, salary):
-        self.emp_id = emp_id
+class Student:
+    def __init__(self, roll_no, name, marks):
+        self.roll_no = roll_no
         self.name = name
-        self.salary = salary
+        self.marks = marks
 
     def display(self):
-        print("Employee ID =", self.emp_id)
-        print("Name =", self.name)
-        print("Salary =", self.salary)
+        total = sum(self.marks)
+        percentage = total / len(self.marks)
+
+        print("Roll No:", self.roll_no)
+        print("Name:", self.name)
+        print("Marks:", self.marks)
+        print("Percentage:", percentage, "%")
+        print("----------------------")
 
 
-class Manager(Employee):
-    def __init__(self, emp_id, name, salary, department):
-        super().__init__(emp_id, name, salary)
-        self.department = department
+# Creating objects for multiple students
+s1 = Student(101, "Rahul", [80, 75, 90, 85, 70])
+s2 = Student(102, "Amit", [70, 65, 80, 75, 85])
+s3 = Student(103, "Sneha", [90, 85, 95, 88, 92])
 
-    def annual_salary(self):
-        return self.salary * 12
-
-    def display(self):
-        super().display()
-        print("Department =", self.department)
-        print("Annual Salary =", self.annual_salary())
-
-
-m = Manager(101, "Rahul", 50000, "IT")
-
-m.display()
+# Displaying student details
+s1.display()
+s2.display()
+s3.display()
