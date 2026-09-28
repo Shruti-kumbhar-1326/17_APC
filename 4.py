@@ -1,31 +1,15 @@
-class Animal:
-    def sound(self):
-        print("Animal makes a sound")
+import numpy as np
 
+# Create a NumPy array from 1 to 20
+arr = np.arange(1, 21)
 
-class Dog(Animal):
-    def sound(self):
-        print("Dog says Woof")
+# Boolean indexing for even numbers
+even = arr[arr % 2 == 0]
 
+# Boolean indexing for odd numbers
+odd = arr[arr % 2 != 0]
 
-class Cat(Animal):
-    def sound(self):
-        print("Cat says Meow")
-
-
-class Cow(Animal):
-    def sound(self):
-        print("Cow says Moo")
-
-
-class Lion(Animal):
-    def sound(self):
-        print("Lion says Roar")
-
-
-# Create objects
-animals = [Dog(), Cat(), Cow(), Lion()]
-
-# Runtime Polymorphism
-for animal in animals:
-    animal.sound()
+# Display the results
+print("Array:", arr)
+print("Even numbers:", even)
+print("Odd numbers:", odd)

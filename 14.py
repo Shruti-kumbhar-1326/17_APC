@@ -1,26 +1,13 @@
-class Media:
-    def play(self):
-        print("Playing media")
+import numpy as np
 
+# Create an array containing duplicate values
+arr = np.array([10, 20, 30, 20, 40, 10, 50, 30, 60, 40])
 
-class Audio(Media):
-    def play(self):
-        print("Playing Audio")
+print("Original Array:")
+print(arr)
 
+# Find unique elements
+unique_elements = np.unique(arr)
 
-class Video(Media):
-    def play(self):
-        print("Playing Video")
-
-
-class Podcast(Media):
-    def play(self):
-        print("Playing Podcast")
-
-
-# Create objects
-media_list = [Audio(), Video(), Podcast()]
-
-# Same method called for different objects
-for media in media_list:
-    media.play()
+print("\nUnique Elements:")
+print(unique_elements)

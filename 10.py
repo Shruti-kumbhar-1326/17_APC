@@ -1,22 +1,24 @@
-class Student:
-    def __init__(self, name, marks):
-        self.name = name
-        self.marks = marks
+import numpy as np
 
-    def __gt__(self, other):
-        return self.marks > other.marks
+# Create a 4 × 4 matrix
+matrix = np.array([
+    [1,  2,  3,  4],
+    [5,  6,  7,  8],
+    [9, 10, 11, 12],
+    [13, 14, 15, 16]
+])
 
-    def __lt__(self, other):
-        return self.marks < other.marks
+print("Matrix:")
+print(matrix)
 
+# Sum of each row
+row_sum = np.sum(matrix, axis=1)
 
-# Create two students
-s1 = Student("Rahul", 450)
-s2 = Student("Amit", 400)
+# Sum of each column
+column_sum = np.sum(matrix, axis=0)
 
-# Compare marks
-if s1 > s2:
-    print(s1.name, "has more marks than", s2.name)
+print("\nSum of each row:")
+print(row_sum)
 
-if s1 < s2:
-    print(s1.name, "has fewer marks than", s2.name)
+print("\nSum of each column:")
+print(column_sum)

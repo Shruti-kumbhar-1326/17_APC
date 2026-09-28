@@ -1,36 +1,21 @@
-class Animal:
-    def __init__(self, name):
-        self.name = name
+import numpy as np
 
-    def eat(self):
-        print(self.name, "is eating")
+# Marks of 20 students
+marks = np.array([
+    65, 72, 88, 55, 90,
+    76, 45, 82, 69, 95,
+    60, 78, 85, 50, 73,
+    92, 68, 80, 58, 87
+])
 
+# Calculate class average
+average = np.mean(marks)
 
-class Dog(Animal):
-    def sound(self):
-        print(self.name, "says Woof")
+# Display class average
+print("Class Average:", average)
 
+# Find students who scored above average
+above_average = marks[marks > average]
 
-class Cat(Animal):
-    def sound(self):
-        print(self.name, "says Meow")
-
-
-class Cow(Animal):
-    def sound(self):
-        print(self.name, "says Moo")
-
-
-# Create objects
-d = Dog("Tommy")
-c = Cat("Kitty")
-w = Cow("Gauri")
-
-d.eat()
-d.sound()
-
-c.eat()
-c.sound()
-
-w.eat()
-w.sound()
+print("Marks above average:")
+print(above_average)

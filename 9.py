@@ -1,34 +1,28 @@
-class Distance:
-    def __init__(self, feet, inches):
-        self.feet = feet
-        self.inches = inches
+import numpy as np
 
-    def __add__(self, other):
-        feet = self.feet + other.feet
-        inches = self.inches + other.inches
+# Create a 4 × 4 NumPy array
+arr = np.array([
+    [1,  2,  3,  4],
+    [5,  6,  7,  8],
+    [9, 10, 11, 12],
+    [13, 14, 15, 16]
+])
 
-        # Convert extra inches into feet
-        feet = feet + inches // 12
-        inches = inches % 12
+print("Array:")
+print(arr)
 
-        return Distance(feet, inches)
+# Display the first row
+print("\nFirst Row:")
+print(arr[0])
 
-    def display(self):
-        print(self.feet, "feet", self.inches, "inches")
+# Display the last column
+print("\nLast Column:")
+print(arr[:, -1])
 
+# Display the diagonal elements
+print("\nDiagonal Elements:")
+print(np.diag(arr))
 
-# Create two objects
-d1 = Distance(5, 8)
-d2 = Distance(3, 7)
-
-# Add two distances
-d3 = d1 + d2
-
-print("First Distance:")
-d1.display()
-
-print("Second Distance:")
-d2.display()
-
-print("Total Distance:")
-d3.display()
+# Display the second and third rows
+print("\nSecond and Third Rows:")
+print(arr[1:3])

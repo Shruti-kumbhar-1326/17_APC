@@ -1,47 +1,27 @@
-class Student:
-    def calculate_grade(self, marks):
-        print("Student Grade")
+import numpy as np
 
+# Create two 3 × 3 matrices
+matrix1 = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+])
 
-class EngineeringStudent(Student):
-    def calculate_grade(self, marks):
-        if marks >= 80:
-            print("Engineering Student Grade = A")
-        elif marks >= 60:
-            print("Engineering Student Grade = B")
-        else:
-            print("Engineering Student Grade = C")
+matrix2 = np.array([
+    [9, 8, 7],
+    [6, 5, 4],
+    [3, 2, 1]
+])
 
+# Matrix addition
+result = matrix1 + matrix2
 
-class MedicalStudent(Student):
-    def calculate_grade(self, marks):
-        if marks >= 75:
-            print("Medical Student Grade = A")
-        elif marks >= 50:
-            print("Medical Student Grade = B")
-        else:
-            print("Medical Student Grade = C")
+# Display matrices
+print("Matrix 1:")
+print(matrix1)
 
+print("\nMatrix 2:")
+print(matrix2)
 
-class ManagementStudent(Student):
-    def calculate_grade(self, marks):
-        if marks >= 70:
-            print("Management Student Grade = A")
-        elif marks >= 50:
-            print("Management Student Grade = B")
-        else:
-            print("Management Student Grade = C")
-
-
-# Create objects
-students = [
-    EngineeringStudent(),
-    MedicalStudent(),
-    ManagementStudent()
-]
-
-marks = 75
-
-# Runtime Polymorphism
-for student in students:
-    student.calculate_grade(marks)
+print("\nMatrix Addition:")
+print(result)

@@ -1,30 +1,19 @@
-class Person:
-    def display_role(self):
-        print("Person")
+import numpy as np
 
+# Create an unsorted NumPy array
+arr = np.array([50, 20, 80, 10, 40, 70, 30, 90])
 
-class Student(Person):
-    def display_role(self):
-        print("Role: Student")
+print("Original Array:")
+print(arr)
 
+# Ascending order
+ascending = np.sort(arr)
 
-class Faculty(Person):
-    def display_role(self):
-        print("Role: Faculty")
+# Descending order
+descending = np.sort(arr)[::-1]
 
+print("\nAscending Order:")
+print(ascending)
 
-class Administrator(Person):
-    def display_role(self):
-        print("Role: Administrator")
-
-
-# Store all objects in a list
-people = [
-    Student(),
-    Faculty(),
-    Administrator()
-]
-
-# Invoke the same method using a loop
-for person in people:
-    person.display_role()
+print("\nDescending Order:")
+print(descending)

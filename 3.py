@@ -1,26 +1,7 @@
-class Vehicle:
-    def start(self):
-        print("Vehicle is starting")
-
-
-class Car(Vehicle):
-    def start(self):
-        print("Car starts with a key")
-
-
-class Bike(Vehicle):
-    def start(self):
-        print("Bike starts with a self-start button")
-
-
-class Bus(Vehicle):
-    def start(self):
-        print("Bus starts with a key")
-
-
-# Create objects
-vehicles = [Car(), Bike(), Bus()]
-
-# Runtime Polymorphism
-for vehicle in vehicles:
-    vehicle.start()
+import numpy as np
+arr =([10,20,30,40,50,60,70,80,90,100])
+print("Array:",arr)
+print("maximum:",np.max(arr))
+print("minimum:",np.min(arr))
+print("sum:",np.sum(arr))
+print("avearge:",np.mean(arr))

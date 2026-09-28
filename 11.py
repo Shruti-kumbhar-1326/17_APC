@@ -1,26 +1,23 @@
-class Product:
-    def __init__(self, name, price):
-        self.name = name
-        self.price = price
+import numpy as np
 
-    def __eq__(self, other):
-        return self.price == other.price
+# Create a NumPy array from 1 to 20
+arr = np.arange(1, 21)
 
-    def __gt__(self, other):
-        return self.price > other.price
+print("Original Array:")
+print(arr)
 
+# First 5 elements
+print("\nFirst 5 elements:")
+print(arr[:5])
 
-# Create two products
-p1 = Product("Laptop", 50000)
-p2 = Product("Mobile", 30000)
+# Last 5 elements
+print("\nLast 5 elements:")
+print(arr[-5:])
 
-# Compare products
-if p1 == p2:
-    print("Both products have the same price")
-else:
-    print("Products have different prices")
+# Alternate elements
+print("\nAlternate elements:")
+print(arr[::2])
 
-if p1 > p2:
-    print(p1.name, "is more expensive than", p2.name)
-else:
-    print(p2.name, "is more expensive than", p1.name)
+# Elements in reverse order
+print("\nReverse order:")
+print(arr[::-1])

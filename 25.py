@@ -1,67 +1,28 @@
-#25.	Create functions to add books, issue books, return books, search books, and display available books. Maintain book availability using dictionaries
-books = {
-    "Python": True,
-    "Java": True,
-    "C++": True
-}
+import numpy as np
 
+# Create random 3D array
+arr = np.random.randint(1, 101, size=(3, 4, 5))
 
-def add_book(book_name):
-    if book_name not in books:
-        books[book_name] = True
-        print("Book added successfully.")
-    else:
-        print("Book already exists.")
+# Flatten the array
+flat = arr.flatten()
 
+print("3D Array:")
+print(arr)
 
-def issue_book(book_name):
-    if book_name in books:
-        if books[book_name]:
-            books[book_name] = False
-            print("Book issued successfully.")
-        else:
-            print("Book is already issued.")
-    else:
-        print("Book not found.")
+print("\nFlattened Array:")
+print(flat)
 
+# Average
+average = np.mean(flat)
 
-def return_book(book_name):
-    if book_name in books:
-        if not books[book_name]:
-            books[book_name] = True
-            print("Book returned successfully.")
-        else:
-            print("Book was not issued.")
-    else:
-        print("Book not found.")
+# Elements greater than 50
+print("\nElements greater than 50:")
+print(flat[flat > 50])
 
+# Even numbers
+print("\nEven numbers:")
+print(flat[flat % 2 == 0])
 
-def search_book(book_name):
-    if book_name in books:
-        if books[book_name]:
-            print("Book found - Available")
-        else:
-            print("Book found - Not Available")
-    else:
-        print("Book not found.")
-
-
-def display_available_books():
-    print("\nAvailable Books:")
-
-    for book, available in books.items():
-        if available:
-            print(book)
-
-
-# Main program
-add_book("HTML")
-
-issue_book("Python")
-
-search_book("Python")
-search_book("Java")
-
-return_book("Python")
-
-display_available_books()
+# Elements less than average
+print("\nElements less than average:")
+print(flat[flat < average])

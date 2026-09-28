@@ -1,30 +1,22 @@
-class Notification:
-    def send(self):
-        print("Sending notification")
+import numpy as np
 
+# Create a one-dimensional array from 1 to 12
+arr = np.arange(1, 13)
 
-class EmailNotification(Notification):
-    def send(self):
-        print("Sending notification through Email")
+print("Original Array:")
+print(arr)
 
+# Reshape into 2 × 6 matrix
+matrix_2x6 = arr.reshape(2, 6)
+print("\n2 × 6 Matrix:")
+print(matrix_2x6)
 
-class SMSNotification(Notification):
-    def send(self):
-        print("Sending notification through SMS")
+# Reshape into 3 × 4 matrix
+matrix_3x4 = arr.reshape(3, 4)
+print("\n3 × 4 Matrix:")
+print(matrix_3x4)
 
-
-class PushNotification(Notification):
-    def send(self):
-        print("Sending notification through Push Notification")
-
-
-# Create objects
-notifications = [
-    EmailNotification(),
-    SMSNotification(),
-    PushNotification()
-]
-
-# Runtime Polymorphism
-for notification in notifications:
-    notification.send()
+# Reshape into 4 × 3 matrix
+matrix_4x3 = arr.reshape(4, 3)
+print("\n4 × 3 Matrix:")
+print(matrix_4x3)

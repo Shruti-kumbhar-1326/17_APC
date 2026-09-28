@@ -1,52 +1,17 @@
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+import numpy as np
 
-    def display_person(self):
-        print("Name =", self.name)
-        print("Age =", self.age)
+# Create a 3D array with numbers from 1 to 24
+arr = np.arange(1, 25).reshape(2, 3, 4)
 
+# Display the array
+print("3D Array:")
+print(arr)
 
-class Doctor(Person):
-    def __init__(self, name, age, specialization):
-        super().__init__(name, age)
-        self.specialization = specialization
+# Display number of dimensions
+print("\nNumber of dimensions:", arr.ndim)
 
-    def display_doctor(self):
-        print("Specialization =", self.specialization)
+# Display shape
+print("Shape:", arr.shape)
 
-
-class Patient(Person):
-    def __init__(self, name, age, disease):
-        super().__init__(name, age)
-        self.disease = disease
-
-    def display_patient(self):
-        print("Disease =", self.disease)
-
-
-class Surgeon(Doctor):
-    def surgery(self):
-        print("Surgeon performs surgery")
-
-
-class MedicalResearcher(Doctor, Patient):
-    def research(self):
-        print("Medical researcher performs research")
-
-
-# Create objects
-s = Surgeon("Dr. Rahul", 40, "General Surgery")
-
-m = MedicalResearcher("Dr. Amit", 35, "Medical Research")
-
-
-print("Surgeon Details:")
-s.display_person()
-s.display_doctor()
-s.surgery()
-
-print("\nMedical Researcher Details:")
-m.display_person()
-m.research()
+# Display size
+print("Size:", arr.size)

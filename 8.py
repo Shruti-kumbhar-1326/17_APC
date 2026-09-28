@@ -1,34 +1,18 @@
-class Report:
-    def generate(self):
-        print("Generating report")
+import numpy as np
 
+# Create a 3 × 4 matrix
+matrix = np.array([
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+])
 
-class PDFReport(Report):
-    def generate(self):
-        print("Generating PDF Report")
+# Find transpose
+transpose = matrix.T
 
+# Display the matrix
+print("Original Matrix:")
+print(matrix)
 
-class ExcelReport(Report):
-    def generate(self):
-        print("Generating Excel Report")
-
-
-class HTMLReport(Report):
-    def generate(self):
-        print("Generating HTML Report")
-
-
-# Function that accepts any report object
-def create_report(report):
-    report.generate()
-
-
-# Create objects
-pdf = PDFReport()
-excel = ExcelReport()
-html = HTMLReport()
-
-# Call function
-create_report(pdf)
-create_report(excel)
-create_report(html)
+print("\nTranspose of Matrix:")
+print(transpose)

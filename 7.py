@@ -1,35 +1,26 @@
-class BankAccount:
-    def calculate_interest(self, balance):
-        print("Interest calculation")
+import numpy as np
 
+# Create two compatible matrices
+matrix1 = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
 
-class SavingsAccount(BankAccount):
-    def calculate_interest(self, balance):
-        interest = balance * 4 / 100
-        print("Savings Account Interest =", interest)
+matrix2 = np.array([
+    [7, 8],
+    [9, 10],
+    [11, 12]
+])
 
+# Matrix multiplication using np.dot()
+result = np.dot(matrix1, matrix2)
 
-class CurrentAccount(BankAccount):
-    def calculate_interest(self, balance):
-        interest = balance * 2 / 100
-        print("Current Account Interest =", interest)
+# Display matrices
+print("Matrix 1:")
+print(matrix1)
 
+print("\nMatrix 2:")
+print(matrix2)
 
-class FixedDepositAccount(BankAccount):
-    def calculate_interest(self, balance):
-        interest = balance * 7 / 100
-        print("Fixed Deposit Interest =", interest)
-
-
-# Create objects
-accounts = [
-    SavingsAccount(),
-    CurrentAccount(),
-    FixedDepositAccount()
-]
-
-balance = 100000
-
-# Runtime Polymorphism
-for account in accounts:
-    account.calculate_interest(balance)
+print("\nMatrix Multiplication:")
+print(result)

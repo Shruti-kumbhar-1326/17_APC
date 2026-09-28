@@ -1,40 +1,20 @@
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+import numpy as np
 
+# Store marks of 10 students
+marks = np.array([75, 82, 68, 90, 55, 78, 85, 92, 60, 70])
 
-class Student(Person):
-    def __init__(self, name, age, roll_no, course):
-        super().__init__(name, age)
-        self.roll_no = roll_no
-        self.course = course
+print("Marks:", marks)
 
+# Calculate results
+highest = np.max(marks)
+lowest = np.min(marks)
+average = np.mean(marks)
+median = np.median(marks)
+standard_deviation = np.std(marks)
 
-class ResearchStudent(Student):
-    def __init__(self, name, age, roll_no, course, topic, guide):
-        super().__init__(name, age, roll_no, course)
-        self.topic = topic
-        self.guide = guide
-
-    def display(self):
-        print("Name =", self.name)
-        print("Age =", self.age)
-        print("Roll No =", self.roll_no)
-        print("Course =", self.course)
-        print("Research Topic =", self.topic)
-        print("Guide Name =", self.guide)
-
-
-# Create object
-r = ResearchStudent(
-    "Rahul",
-    21,
-    101,
-    "M.Tech",
-    "Artificial Intelligence",
-    "Dr. Sharma"
-)
-
-# Display details
-r.display()
+# Display results
+print("Highest Marks:", highest)
+print("Lowest Marks:", lowest)
+print("Average Marks:", average)
+print("Median:", median)
+print("Standard Deviation:", standard_deviation)

@@ -1,23 +1,14 @@
-# Open the first file in read mode
-file1 = open("file1.txt", "r")
-content1 = file1.read()
-file1.close()
+import numpy as np
 
-# Open the second file in read mode
-file2 = open("file2.txt", "r")
-content2 = file2.read()
-file2.close()
+# Create random 3D array
+arr = np.random.randint(1, 101, size=(3, 4, 5))
 
-# Create the third file
-file3 = open("file3.txt", "w")
+print("3D Array:")
+print(arr)
 
-# Write contents of both files
-file3.write(content1)
-file3.write("\n")
-file3.write(content2)
-
-# Close the third file
-file3.close()
-
-print("Contents of both files merged successfully.")
-print("New file created: file3.txt")
+print("\nMean:", np.mean(arr))
+print("Median:", np.median(arr))
+print("Standard Deviation:", np.std(arr))
+print("Variance:", np.var(arr))
+print("Minimum:", np.min(arr))
+print("Maximum:", np.max(arr))

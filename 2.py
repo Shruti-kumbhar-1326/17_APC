@@ -1,29 +1,10 @@
-class Employee:
-    def calculate_salary(self):
-        print("Employee Salary")
-
-
-class Manager(Employee):
-    def calculate_salary(self):
-        salary = 50000
-        print("Manager Salary =", salary)
-
-
-class Developer(Employee):
-    def calculate_salary(self):
-        salary = 40000
-        print("Developer Salary =", salary)
-
-
-class Tester(Employee):
-    def calculate_salary(self):
-        salary = 30000
-        print("Tester Salary =", salary)
-
-
-# Create objects
-employees = [Manager(), Developer(), Tester()]
-
-# Runtime Polymorphism
-for employee in employees:
-    employee.calculate_salary()
+import numpy as np
+arr1 = np.array([10,20,30,40,50])
+arr2 = np.array([2,4,6,8,10])
+print("Array1:",arr1)
+print("Array2:",arr2)
+print("Addition :",arr1+arr2)
+print("subtraction :",arr1 - arr2)
+print("multiplication:",arr1*arr2)
+print("division:",arr1/arr2)
+print("modulas:",arr1 % arr2)

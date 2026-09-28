@@ -1,43 +1,21 @@
-# Open the file in read mode
-file = open("transactions.txt", "r")
+import numpy as np
 
-# Read all records
-records = file.readlines()
+# Create a 3D array of shape (2, 3, 4)
+arr = np.arange(1, 25).reshape(2, 3, 4)
 
-# Close the file
-file.close()
+print("3D Array:")
+print(arr)
 
-# Initialize variables
-total_deposits = 0
-total_withdrawals = 0
-largest_transaction = 0
-largest_type = ""
+# Sum of all elements
+print("\nSum of all elements:", np.sum(arr))
 
-# Process each transaction
-for record in records[1:]:
-    transaction_type, amount = record.strip().split(",")
+# Sum of each layer
+print("Sum of each layer:", np.sum(arr, axis=(1, 2)))
 
-    amount = float(amount)
+# Sum along rows
+print("Sum along rows:")
+print(np.sum(arr, axis=2))
 
-    # Calculate deposits
-    if transaction_type.lower() == "deposit":
-        total_deposits += amount
-
-    # Calculate withdrawals
-    elif transaction_type.lower() == "withdrawal":
-        total_withdrawals += amount
-
-    # Find largest transaction
-    if amount > largest_transaction:
-        largest_transaction = amount
-        largest_type = transaction_type
-
-# Calculate final balance
-final_balance = total_deposits - total_withdrawals
-
-# Display results
-print("Total Deposits:", total_deposits)
-print("Total Withdrawals:", total_withdrawals)
-print("Final Balance:", final_balance)
-print("Largest Transaction:", largest_transaction)
-print("Transaction Type:", largest_type)
+# Sum along columns
+print("Sum along columns:")
+print(np.sum(arr, axis=1))

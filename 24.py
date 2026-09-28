@@ -1,45 +1,16 @@
-#24.	Create functions for deposit, withdrawal, balance enquiry, and transaction history. Prevent withdrawal when the balance is insufficient and maintain a transaction record.
-balance = 0
-transactions = []
+import numpy as np
 
+# Create 3D array from 1 to 27
+arr = np.arange(1, 28).reshape(3, 3, 3)
 
-def deposit(amount):
-    global balance
-    balance += amount
-    transactions.append("Deposited ₹" + str(amount))
-    print("Amount deposited successfully.")
+# Flatten the array
+flat = arr.flatten()
 
+print("Flattened Array:")
+print(flat)
 
-def withdrawal(amount):
-    global balance
-
-    if amount <= balance:
-        balance -= amount
-        transactions.append("Withdrawn ₹" + str(amount))
-        print("Amount withdrawn successfully.")
-    else:
-        print("Insufficient balance.")
-
-
-def balance_enquiry():
-    print("Current Balance = ₹", balance)
-
-
-def transaction_history():
-    print("\nTransaction History:")
-
-    if len(transactions) == 0:
-        print("No transactions found.")
-    else:
-        for transaction in transactions:
-            print(transaction)
-
-
-# Main program
-deposit(5000)
-withdrawal(1500)
-balance_enquiry()
-
-withdrawal(5000)
-
-transaction_history()
+# Calculate values
+print("\nSum:", np.sum(flat))
+print("Average:", np.mean(flat))
+print("Maximum:", np.max(flat))
+print("Minimum:", np.min(flat))

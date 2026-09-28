@@ -1,47 +1,26 @@
-class SmartDevice:
-    def turn_on(self):
-        print("Device is ON")
+import numpy as np
 
-    def turn_off(self):
-        print("Device is OFF")
+# Create two NumPy arrays
+arr1 = np.array([[1, 2, 3],
+                 [4, 5, 6]])
 
+arr2 = np.array([[7, 8, 9],
+                 [10, 11, 12]])
 
-class Light(SmartDevice):
-    def turn_on(self):
-        print("Light is ON")
+print("Array 1:")
+print(arr1)
 
-    def turn_off(self):
-        print("Light is OFF")
+print("\nArray 2:")
+print(arr2)
 
+# Horizontal concatenation
+horizontal = np.hstack((arr1, arr2))
 
-class Fan(SmartDevice):
-    def turn_on(self):
-        print("Fan is ON")
+# Vertical concatenation
+vertical = np.vstack((arr1, arr2))
 
-    def turn_off(self):
-        print("Fan is OFF")
+print("\nHorizontal Concatenation:")
+print(horizontal)
 
-
-class AC(SmartDevice):
-    def turn_on(self):
-        print("AC is ON")
-
-    def turn_off(self):
-        print("AC is OFF")
-
-
-class TV(SmartDevice):
-    def turn_on(self):
-        print("TV is ON")
-
-    def turn_off(self):
-        print("TV is OFF")
-
-
-# Create objects
-devices = [Light(), Fan(), AC(), TV()]
-
-# Call methods using loop
-for device in devices:
-    device.turn_on()
-    device.turn_off()
+print("\nVertical Concatenation:")
+print(vertical)
