@@ -1,38 +1,6 @@
-from abc import ABC, abstractmethod
-
-
-class Shape(ABC):
-    @abstractmethod
-    def area(self):
-        pass
-
-
-class Circle(Shape):
-    def area(self):
-        radius = 5
-        print("Area of Circle =", 3.14 * radius * radius)
-
-
-class Rectangle(Shape):
-    def area(self):
-        length = 10
-        breadth = 5
-        print("Area of Rectangle =", length * breadth)
-
-
-class Triangle(Shape):
-    def area(self):
-        base = 8
-        height = 6
-        print("Area of Triangle =", 0.5 * base * height)
-
-
-# Create objects
-circle = Circle()
-rectangle = Rectangle()
-triangle = Triangle()
-
-# Display areas
-circle.area()
-rectangle.area()
-triangle.area()
+#Write a PYTHON program to print the natural numbers up to n
+n = int(input("enter a number:"))
+i = 1
+while i<= n:
+    print(i,end=" ")
+    i += 1
