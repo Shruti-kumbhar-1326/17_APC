@@ -1,11 +1,18 @@
-#Write a PYTHON program to sum the given sequence  1 + 1/ 1! + 1/ 2! + 1/3! + ….  + 1/n!
-n = int(input("Enter the value of n: "))
+#5.	Create a list of student names. Remove:
+#•	First student 
+#•#	Last student 
+#•	A specific student by name  
+#Display the remaining list.
 
-fact = 1
-sum = 1  # First term of the sequence
-
-for i in range(1, n + 1):
-    fact = fact * i      # Calculate i!
-    sum = sum + (1 / fact)
-
-print("Sum of the series =", sum)
+students =["shruti","prachi" ,"siddhi","vaishnvi","kalyani"]
+print("original list of student name:",students)
+students.pop(0)
+print("remove first name:",students)
+students.pop()
+print("remove last name:",students)
+name = input("enter a name to remove :")
+if name in students:
+    students.remove(name)
+else :
+    print("student not found:")
+print("remaining student name",students)        

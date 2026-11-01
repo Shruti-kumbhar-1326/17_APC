@@ -1,17 +1,27 @@
-import numpy as np
+#18.	Create a shopping cart using a list.Perform:
+#•	Add item 
+#•	Search item 
+#•	Display cart 
+#•	Count total items
+cart = []
 
-# Create a 3D array with numbers from 1 to 24
-arr = np.arange(1, 25).reshape(2, 3, 4)
+# Add items
+n = int(input("How many items do you want to add? "))
 
-# Display the array
-print("3D Array:")
-print(arr)
+for i in range(n):
+    item = input("Enter item: ")
+    cart.append(item)
 
-# Display number of dimensions
-print("\nNumber of dimensions:", arr.ndim)
+# Search item
+search = input("Enter item to search: ")
 
-# Display shape
-print("Shape:", arr.shape)
+if search in cart:
+    print("Item found in cart.")
+else:
+    print("Item not found in cart.")
 
-# Display size
-print("Size:", arr.size)
+# Display cart
+print("Shopping Cart:", cart)
+
+# Count total items
+print("Total items:", len(cart))

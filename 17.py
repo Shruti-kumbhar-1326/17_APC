@@ -1,21 +1,35 @@
-import numpy as np
+#17.	Create two 3 × 3 matrices using nested lists and perform matrix addition.
+matrix1 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
 
-# Marks of 20 students
-marks = np.array([
-    65, 72, 88, 55, 90,
-    76, 45, 82, 69, 95,
-    60, 78, 85, 50, 73,
-    92, 68, 80, 58, 87
-])
+matrix2 = [
+    [9, 8, 7],
+    [6, 5, 4],
+    [3, 2, 1]
+]
 
-# Calculate class average
-average = np.mean(marks)
+result = [
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0]
+]
 
-# Display class average
-print("Class Average:", average)
+# Matrix addition
+for i in range(3):
+    for j in range(3):
+        result[i][j] = matrix1[i][j] + matrix2[i][j]
 
-# Find students who scored above average
-above_average = marks[marks > average]
+print("Matrix 1:")
+for row in matrix1:
+    print(row)
 
-print("Marks above average:")
-print(above_average)
+print("Matrix 2:")
+for row in matrix2:
+    print(row)
+
+print("Addition of matrices:")
+for row in result:
+    print(row)

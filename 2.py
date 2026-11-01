@@ -1,8 +1,8 @@
-#Write a PYTHON program to print even numbers up to n
-
-
-n = int(input(" enter a value of n:"))
-i = 1
-while i<= n:
-    print(i,end=" ")
-    i += 2
+#2.	Create a list of five integers. Display:
+#•	First element 
+#•	Last element 
+#•	Third element
+integer = [1,2,3,4,5]
+print("firts num:",integer[0])
+print("last num:",integer[-1])
+print("third num:",integer[2])

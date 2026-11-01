@@ -1,13 +1,35 @@
-import numpy as np
+#19.	Store names of students present in class.Display:
+#•	Total students 
+#•	Search a student's attendance 
+#•	Add a new student 
+#•	Remove an absent student 
+students = ["Shruti", "Rahul", "Priya", "Amit", "Sneha"]
 
-# Create a 3D array of shape (2, 3, 4)
-arr = np.arange(1, 25).reshape(2, 3, 4)
+# Display total students
+print("Total students:", len(students))
 
-print("3D Array:")
-print(arr)
+# Search student's attendance
+name = input("Enter student name to search: ")
 
-# Access elements
-print("\nFirst element:", arr[0, 0, 0])
-print("Last element:", arr[-1, -1, -1])
-print("Element at index [0,1,2]:", arr[0, 1, 2])
-print("Element at index [1,2,3]:", arr[1, 2, 3])
+if name in students:
+    print(name, "is present.")
+else:
+    print(name, "is absent.")
+
+# Add a new student
+new_student = input("Enter new student name: ")
+students.append(new_student)
+
+print("Student added successfully.")
+
+# Remove an absent student
+absent = input("Enter absent student name to remove: ")
+
+if absent in students:
+    students.remove(absent)
+    print("Absent student removed.")
+else:
+    print("Student not found.")
+
+# Display final list
+print("Students present:", students)

@@ -1,21 +1,20 @@
-# Write a PYTHON program to compute the cosine series cos(x) = 1 – x2 / 2! + x4 / 4! – x6 / 6! + … xn / n!
-x = float(input("Enter the value of x (in radians): "))
-n = int(input("Enter the number of terms: "))
+#6.	Write a program to find the largest and smallest number in a list without using max() or min().
+# Find largest and smallest number in a list
 
-sum = 1
-sign = -1
+numbers = [10, 25, 5, 40, 15]
 
-for i in range(2, n + 1, 2):
-    fact = 1
+largest = numbers[0]
+smallest = numbers[0]
 
-    # Calculate i!
-    for j in range(1, i + 1):
-        fact = fact * j
+for num in numbers:
+    if num > largest:
+        largest = num
 
-    term = (x ** i) / fact
-    sum = sum + (sign * term)
+    if num < smallest:
+        smallest = num
 
-    sign = sign * -1   # Change sign (+/-)
+print("List:", numbers)
+print("Largest number:", largest)
+print("Smallest number:", smallest)
 
-print("cos(", x, ") =", sum) 
 

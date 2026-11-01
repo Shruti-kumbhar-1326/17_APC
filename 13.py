@@ -1,19 +1,16 @@
-import numpy as np
+#13. Accept 10 numbers and sort them in:
+   # •	Ascending order
+    #•	Descending order
+numbers = []
 
-# Create an unsorted NumPy array
-arr = np.array([50, 20, 80, 10, 40, 70, 30, 90])
-
-print("Original Array:")
-print(arr)
+for i in range(10):
+    num = int(input("Enter a number: "))
+    numbers.append(num)
 
 # Ascending order
-ascending = np.sort(arr)
+numbers.sort()
+print("Ascending order:", numbers)
 
 # Descending order
-descending = np.sort(arr)[::-1]
-
-print("\nAscending Order:")
-print(ascending)
-
-print("\nDescending Order:")
-print(descending)
+numbers.sort(reverse=True)
+print("Descending order:", numbers)

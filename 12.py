@@ -1,13 +1,9 @@
-import numpy as np
+#12. Display all elements present at even index positions.
 
-# Create an array of 10 integers
-arr = np.array([10, 25, 55, 40, 70, 35, 90, 45, 60, 20])
 
-print("Original Array:")
-print(arr)
+numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
-# Replace elements greater than 50 with 0
-arr[arr > 50] = 0
+print("Elements at even index positions:")
 
-print("\nArray after replacing values greater than 50 with 0:")
-print(arr)
+for i in range(0, len(numbers), 2):
+    print(numbers[i])

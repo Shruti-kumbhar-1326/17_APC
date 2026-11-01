@@ -1,26 +1,7 @@
-import numpy as np
+#15. Find the second largest element in a list.
+numbers = [10, 25, 45, 30, 50, 20]
 
-# Create two NumPy arrays
-arr1 = np.array([[1, 2, 3],
-                 [4, 5, 6]])
+numbers.sort()
 
-arr2 = np.array([[7, 8, 9],
-                 [10, 11, 12]])
-
-print("Array 1:")
-print(arr1)
-
-print("\nArray 2:")
-print(arr2)
-
-# Horizontal concatenation
-horizontal = np.hstack((arr1, arr2))
-
-# Vertical concatenation
-vertical = np.vstack((arr1, arr2))
-
-print("\nHorizontal Concatenation:")
-print(horizontal)
-
-print("\nVertical Concatenation:")
-print(vertical)
+print("List:", numbers)
+print("Second largest element:", numbers[-2])

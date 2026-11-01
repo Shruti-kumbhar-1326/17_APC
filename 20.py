@@ -1,21 +1,35 @@
-import numpy as np
+#20.	Create a list of books.Implement:
+#•	Add a new book 
+#•	Search a book 
+#•	Remove a book 
+#•	Display all books 
+#•	Count total books
+books = ["Python", "Java", "C++", "HTML", "SQL"]
 
-# Create a 3D array of shape (2, 3, 4)
-arr = np.arange(1, 25).reshape(2, 3, 4)
+# Add a new book
+new_book = input("Enter a new book: ")
+books.append(new_book)
+print("Book added successfully.")
 
-print("3D Array:")
-print(arr)
+# Search a book
+search = input("Enter book name to search: ")
 
-# Sum of all elements
-print("\nSum of all elements:", np.sum(arr))
+if search in books:
+    print("Book is available.")
+else:
+    print("Book is not available.")
 
-# Sum of each layer
-print("Sum of each layer:", np.sum(arr, axis=(1, 2)))
+# Remove a book
+remove_book = input("Enter book name to remove: ")
 
-# Sum along rows
-print("Sum along rows:")
-print(np.sum(arr, axis=2))
+if remove_book in books:
+    books.remove(remove_book)
+    print("Book removed successfully.")
+else:
+    print("Book not found.")
 
-# Sum along columns
-print("Sum along columns:")
-print(np.sum(arr, axis=1))
+# Display all books
+print("All books:", books)
+
+# Count total books
+print("Total books:", len(books))
