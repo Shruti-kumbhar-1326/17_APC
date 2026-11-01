@@ -1,5 +1,11 @@
-import numpy as np
+import pandas as pd
 
-arr = np.array([1, 2, 3, 4, 5])
+data = {
+    "Name": ["Amit", "Rahul", "Sneha"],
+    "Age": [20, 21, 19],
+    "Marks": [85, 90, 88]
+}
 
-print(arr)
+df = pd.DataFrame(data)
+
+print(df)
