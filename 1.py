@@ -1,7 +1,38 @@
-#1.	Write a Python program using NumPy to create a one-dimensional array containing 10 integers and display the array, its size, data type, and number of dimensions.
-import numpy as np
-arr = np.array([10,20,30,40,50,60,70,80,90,100])
-print("Array:",arr)
-print("size:",arr.size)
-print("Data type :",arr.dtype)
-print("Number of dimension:",arr.ndim)
+from abc import ABC, abstractmethod
+
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+
+class Circle(Shape):
+    def area(self):
+        radius = 5
+        print("Area of Circle =", 3.14 * radius * radius)
+
+
+class Rectangle(Shape):
+    def area(self):
+        length = 10
+        breadth = 5
+        print("Area of Rectangle =", length * breadth)
+
+
+class Triangle(Shape):
+    def area(self):
+        base = 8
+        height = 6
+        print("Area of Triangle =", 0.5 * base * height)
+
+
+# Create objects
+circle = Circle()
+rectangle = Rectangle()
+triangle = Triangle()
+
+# Display areas
+circle.area()
+rectangle.area()
+triangle.area()
